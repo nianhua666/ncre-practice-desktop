@@ -1,0 +1,178 @@
+[
+  {
+    "code": "level1_office",
+    "name": "一级计算机基础及 MS Office 应用",
+    "level": "一级",
+    "description": "覆盖办公软件与信息技术基础的入门训练题库。",
+    "completeness": "starter",
+    "bank_file": "level1_office.json",
+    "question_count": 12,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 30,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 5
+        },
+        {
+          "type": "fill_blank",
+          "count": 2
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level2_c",
+    "name": "二级 C 语言程序设计",
+    "level": "二级",
+    "description": "内置覆盖 C 语言核心考点的重点题库，支持系统组卷与 AI 辅助讲评。",
+    "completeness": "broad",
+    "bank_file": "level2_c.json",
+    "question_count": 420,
+    "high_frequency_question_count": 390,
+    "top_topics": [
+      "程序设计",
+      "文件",
+      "结构体",
+      "字符串",
+      "算法与数据结构",
+      "数组",
+      "动态内存",
+      "函数",
+      "指针",
+      "C基础"
+    ],
+    "default_blueprint": {
+      "duration_minutes": 120,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 20,
+          "high_frequency_target": 12
+        },
+        {
+          "type": "fill_blank",
+          "count": 4,
+          "high_frequency_target": 2
+        },
+        {
+          "type": "code_completion",
+          "count": 3,
+          "high_frequency_target": 2
+        },
+        {
+          "type": "bug_fix",
+          "count": 2,
+          "high_frequency_target": 1
+        },
+        {
+          "type": "programming",
+          "count": 1,
+          "high_frequency_target": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level2_python",
+    "name": "二级 Python 语言程序设计",
+    "level": "二级",
+    "description": "覆盖 Python 基础、文件、函数与程序设计的入门到中级练习。",
+    "completeness": "starter",
+    "bank_file": "level2_python.json",
+    "question_count": 10,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 4
+        },
+        {
+          "type": "fill_blank",
+          "count": 2
+        },
+        {
+          "type": "bug_fix",
+          "count": 1
+        },
+        {
+          "type": "programming",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level3_network",
+    "name": "三级网络技术",
+    "level": "三级",
+    "description": "覆盖网络基础、协议、安全与设备分工的训练题库。",
+    "completeness": "starter",
+    "bank_file": "level3_network.json",
+    "question_count": 8,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 4
+        },
+        {
+          "type": "fill_blank",
+          "count": 1
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        },
+        {
+          "type": "bug_fix",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level4_network_engineer",
+    "name": "四级网络工程师",
+    "level": "四级",
+    "description": "覆盖网络工程、监控、变更与高可用场景的进阶题库。",
+    "completeness": "starter",
+    "bank_file": "level4_network_engineer.json",
+    "question_count": 5,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 40,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 2
+        },
+        {
+          "type": "fill_blank",
+          "count": 1
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        },
+        {
+          "type": "programming",
+          "count": 1
+        }
+      ]
+    }
+  }
+]

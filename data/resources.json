@@ -1,0 +1,32 @@
+[
+  {
+    "title": "二级 C 语言程序设计考试大纲（2025 年版）",
+    "type": "official",
+    "url": "https://ncre.neea.edu.cn/res/Home/2412/220876da81ad5d5657c599c68f81e8e9.pdf",
+    "note": "用于核对考试范围与能力要求。"
+  },
+  {
+    "title": "二级 C 语言程序设计样题及参考答案",
+    "type": "official",
+    "url": "https://ncre.neea.edu.cn/res/Home/2501/df07c4d26912fdac5b34a8496544c4ba.pdf",
+    "note": "用于理解题型和作答形式。"
+  },
+  {
+    "title": "全国计算机等级考试科目设置说明",
+    "type": "official",
+    "url": "https://ncre.neea.edu.cn/xhtml1/report/2412/138-1.htm",
+    "note": "用于确认不同等级与科目分类。"
+  },
+  {
+    "title": "OpenAI API Key 管理页",
+    "type": "official",
+    "url": "https://platform.openai.com/settings/organization/api-keys",
+    "note": "用于获取或管理官方 OpenAI API Key。"
+  },
+  {
+    "title": "OpenAI Structured Outputs 指南",
+    "type": "official",
+    "url": "https://platform.openai.com/docs/guides/structured-outputs",
+    "note": "用于对接 JSON 结构化输出。"
+  }
+]

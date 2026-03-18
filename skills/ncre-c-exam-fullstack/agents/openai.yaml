@@ -1,0 +1,4 @@
+interface:
+  display_name: "NCRE C Exam Fullstack"
+  short_description: "Build and extend a Chinese NCRE mock-exam desktop app with AI."
+  default_prompt: "Use $ncre-c-exam-fullstack to build or improve the NCRE desktop exam trainer."

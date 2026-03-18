@@ -73,6 +73,38 @@ class AIProvider:
 
         raise AIProviderError("；".join(errors) if errors else "AI 请求失败。")
 
+    def test_connection(self, settings_override: dict[str, Any] | None = None) -> dict[str, Any]:
+        settings = self.get_settings()
+        if settings_override:
+            settings.update(settings_override)
+        if not settings.get("enabled"):
+            raise AIProviderError("AI 功能未启用，无法测试连接。")
+        if not settings.get("api_key"):
+            raise AIProviderError("API Key 为空，无法测试连接。")
+        result = None
+        for protocol in self._protocol_attempt_order(settings):
+            try:
+                result = self._request_json_once(
+                    settings,
+                    system_prompt="你是连接测试助手。请只返回 JSON。",
+                    user_prompt='请返回 {"ok":true,"message":"connection ok"}',
+                    protocol=protocol,
+                )
+                settings["protocol"] = protocol
+                break
+            except AIProviderHTTPError as exc:
+                if not self._should_fallback(exc):
+                    raise
+        if result is None:
+            raise AIProviderError("连接测试失败。")
+        return {
+            "provider_name": settings.get("provider_name"),
+            "protocol": settings.get("protocol"),
+            "base_url": settings.get("base_url"),
+            "model": settings.get("model"),
+            "result": result,
+        }
+
     def generate_exam(self, subject: dict[str, Any]) -> dict[str, Any]:
         blueprint = subject["default_blueprint"]
         system_prompt = (

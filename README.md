@@ -53,6 +53,8 @@ python .\scripts\analyze_question_banks.py
 - OpenAI 官方 API
 - OpenAI Compatible 网关
 - Sub2API 最新兼容接入
+- 一键应用 OpenAI / Sub2API 预设
+- 直接测试连接是否可用
 
 对于 Sub2API，直接填写网关地址即可，程序会自动规范 `/v1` 路径，并在 `chat/completions` 与 `responses` 之间自动兼容回退。
 

@@ -35,6 +35,11 @@ class ApplicationContext:
         self.database.set_setting("ai_settings", settings)
         return settings
 
+    def test_settings(self, payload: dict[str, Any]) -> dict[str, Any]:
+        settings = dict(DEFAULT_AI_SETTINGS)
+        settings.update(payload)
+        return self.ai_provider.test_connection(settings)
+
     def get_dashboard(self) -> dict[str, Any]:
         attempts = self.database.list_attempts()
         detailed_attempts = self.database.list_attempt_payloads(limit=50)
@@ -288,6 +293,13 @@ class NCRERequestHandler(SimpleHTTPRequestHandler):
         if self.path == "/api/exams/submit":
             try:
                 result = self.server.context.submit_exam(payload)
+                self._send_json(result)
+            except Exception as exc:  # noqa: BLE001
+                self._send_json({"error": str(exc)}, status=HTTPStatus.BAD_REQUEST)
+            return
+        if self.path == "/api/settings/test":
+            try:
+                result = self.server.context.test_settings(payload)
                 self._send_json(result)
             except Exception as exc:  # noqa: BLE001
                 self._send_json({"error": str(exc)}, status=HTTPStatus.BAD_REQUEST)

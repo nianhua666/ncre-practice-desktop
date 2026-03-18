@@ -46,6 +46,7 @@ const dom = {
   weaknessBoostInput: document.getElementById("weakness-boost-input"),
   presetOpenAIButton: document.getElementById("preset-openai-btn"),
   presetSub2APIButton: document.getElementById("preset-sub2api-btn"),
+  testConnectionButton: document.getElementById("test-connection-btn"),
 };
 
 let timerHandle = null;
@@ -681,6 +682,18 @@ document.getElementById("settings-form").addEventListener("submit", async (event
     });
     populateSettings();
     showBanner("AI 设置已保存。");
+  } catch (error) {
+    showBanner(error.message, "error");
+  }
+});
+
+dom.testConnectionButton.addEventListener("click", async () => {
+  try {
+    const result = await request("/api/settings/test", {
+      method: "POST",
+      body: JSON.stringify(readSettingsForm()),
+    });
+    showBanner(`连接测试成功：${result.provider_name} / ${result.model} / ${result.protocol}`);
   } catch (error) {
     showBanner(error.message, "error");
   }

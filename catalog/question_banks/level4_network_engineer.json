@@ -1,0 +1,170 @@
+{
+  "subject_code": "level4_network_engineer",
+  "subject_name": "四级网络工程师",
+  "default_blueprint": {
+    "duration_minutes": 40,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 2
+      },
+      {
+        "type": "fill_blank",
+        "count": 1
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      },
+      {
+        "type": "programming",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L4NE-001",
+      "type": "single_choice",
+      "stem": "在企业网络中部署双核心冗余，主要目标之一是：",
+      "options": [
+        "A. 增加桌面数量",
+        "B. 提高可用性",
+        "C. 减少日志",
+        "D. 替代防病毒"
+      ],
+      "answer": "B",
+      "analysis": "双核心设计主要用于提高可用性与容错。",
+      "tags": [
+        "架构",
+        "高可用"
+      ],
+      "difficulty": "medium",
+      "score": 2
+    },
+    {
+      "id": "L4NE-002",
+      "type": "single_choice",
+      "stem": "BGP 更适用于：",
+      "options": [
+        "A. 单机文件管理",
+        "B. 大规模自治系统之间路由交换",
+        "C. 局域网打印共享",
+        "D. 本地串口通信"
+      ],
+      "answer": "B",
+      "analysis": "BGP 常用于自治系统之间的路由交换。",
+      "tags": [
+        "路由协议"
+      ],
+      "difficulty": "medium",
+      "score": 2
+    },
+    {
+      "id": "L4NE-003",
+      "type": "fill_blank",
+      "stem": "常用来发现与修复系统漏洞的管理过程称为 ______ 管理。",
+      "answer": [
+        "补丁",
+        "patch"
+      ],
+      "analysis": "补丁管理是运维安全的重要部分。",
+      "tags": [
+        "安全运维"
+      ],
+      "difficulty": "medium",
+      "score": 5
+    },
+    {
+      "id": "L4NE-004",
+      "type": "short_answer",
+      "stem": "说明在设计企业网络监控体系时，为什么既要关注链路状态，也要关注业务指标。",
+      "analysis": "应说明链路层正常不代表业务正常，需结合应用响应、错误率、吞吐与容量。",
+      "rubric": [
+        {
+          "description": "链路正常不代表业务正常",
+          "keywords": [
+            "链路",
+            "业务正常"
+          ],
+          "points": 4
+        },
+        {
+          "description": "应用响应或错误率",
+          "keywords": [
+            "响应",
+            "错误率"
+          ],
+          "points": 3
+        },
+        {
+          "description": "吞吐、容量或趋势",
+          "keywords": [
+            "吞吐",
+            "容量",
+            "趋势"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "监控",
+        "运维"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L4NE-005",
+      "type": "programming",
+      "stem": "说明设计一份网络变更实施方案时至少需要包含哪些核心部分。",
+      "analysis": "应包含变更目标、影响评估、实施步骤、回退方案、验证与通知。",
+      "rubric": [
+        {
+          "description": "目标与范围",
+          "keywords": [
+            "目标",
+            "范围"
+          ],
+          "points": 2
+        },
+        {
+          "description": "影响评估",
+          "keywords": [
+            "影响",
+            "评估"
+          ],
+          "points": 2
+        },
+        {
+          "description": "实施步骤",
+          "keywords": [
+            "步骤",
+            "实施"
+          ],
+          "points": 2
+        },
+        {
+          "description": "回退方案",
+          "keywords": [
+            "回退"
+          ],
+          "points": 2
+        },
+        {
+          "description": "验证与通知",
+          "keywords": [
+            "验证",
+            "通知"
+          ],
+          "points": 2
+        }
+      ],
+      "tags": [
+        "工程管理"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

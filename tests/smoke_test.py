@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import json
 import unittest
+from pathlib import Path
 
 from backend.ai_provider import DEFAULT_AI_SETTINGS
 from backend.app import ApplicationContext
@@ -8,6 +10,12 @@ from backend.question_bank import QuestionBankService
 
 
 class SmokeTest(unittest.TestCase):
+    def test_catalog_exists(self) -> None:
+        catalog_path = Path("catalog/catalog.json")
+        self.assertTrue(catalog_path.exists())
+        payload = json.loads(catalog_path.read_text(encoding="utf-8"))
+        self.assertEqual(payload["default_subject_code"], "level2_c")
+
     def test_subjects_and_banks_exist(self) -> None:
         service = QuestionBankService()
         subjects = service.list_subjects()

@@ -1,18 +1,22 @@
 from __future__ import annotations
 
 import json
+import hashlib
+import urllib.request
 from collections import Counter
 from copy import deepcopy
 from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from .config import bundled_data_dir
+from .config import bundled_data_dir, remote_catalog_url, runtime_bank_dir, runtime_catalog_cache_path
 
 
 class QuestionBankService:
     def __init__(self) -> None:
         self.data_dir = bundled_data_dir()
+        self.runtime_bank_dir = runtime_bank_dir()
+        self.catalog_cache_path = runtime_catalog_cache_path()
         self._subjects_cache: list[dict[str, Any]] | None = None
         self._bank_cache: dict[str, dict[str, Any]] = {}
 
@@ -22,11 +26,28 @@ class QuestionBankService:
     def _resources_file(self) -> Path:
         return self.data_dir / "resources.json"
 
+    def _runtime_bank_file(self, subject: dict[str, Any]) -> Path:
+        return self.runtime_bank_dir / subject["bank_file"]
+
+    def _read_catalog_cache(self) -> dict[str, Any] | None:
+        if not self.catalog_cache_path.exists():
+            return None
+        return json.loads(self.catalog_cache_path.read_text(encoding="utf-8"))
+
+    def _write_catalog_cache(self, payload: dict[str, Any]) -> None:
+        self.catalog_cache_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
     def list_subjects(self) -> list[dict[str, Any]]:
         if self._subjects_cache is None:
             with self._subjects_file().open("r", encoding="utf-8") as handle:
                 self._subjects_cache = json.load(handle)
-        return deepcopy(self._subjects_cache)
+        subjects = deepcopy(self._subjects_cache)
+        catalog = self._read_catalog_cache() or {"subjects": []}
+        remote_lookup = {item["code"]: item for item in catalog.get("subjects", [])}
+        for subject in subjects:
+            subject["bank_source"] = "runtime" if self._runtime_bank_file(subject).exists() else "bundled"
+            subject["remote_available"] = subject["code"] in remote_lookup
+        return subjects
 
     def list_resources(self) -> list[dict[str, Any]]:
         with self._resources_file().open("r", encoding="utf-8") as handle:
@@ -42,11 +63,56 @@ class QuestionBankService:
         if subject_code in self._bank_cache:
             return deepcopy(self._bank_cache[subject_code])
         subject = self.get_subject(subject_code)
-        bank_path = self.data_dir / "question_banks" / subject["bank_file"]
+        runtime_path = self._runtime_bank_file(subject)
+        bank_path = runtime_path if runtime_path.exists() else self.data_dir / "question_banks" / subject["bank_file"]
         with bank_path.open("r", encoding="utf-8") as handle:
             bank = json.load(handle)
         self._bank_cache[subject_code] = bank
         return deepcopy(bank)
+
+    def fetch_remote_catalog(self, force_refresh: bool = False) -> dict[str, Any]:
+        if not force_refresh:
+            cached = self._read_catalog_cache()
+            if cached:
+                return cached
+        with urllib.request.urlopen(remote_catalog_url(), timeout=10) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+        self._write_catalog_cache(payload)
+        return payload
+
+    def sync_subject_bank(self, subject_code: str | None = None, force_refresh: bool = False) -> dict[str, Any]:
+        catalog = self.fetch_remote_catalog(force_refresh=force_refresh)
+        target_code = subject_code or catalog.get("default_subject_code") or "level2_c"
+        lookup = {item["code"]: item for item in catalog.get("subjects", [])}
+        if target_code not in lookup:
+            raise KeyError(f"远程目录中未找到科目：{target_code}")
+        item = lookup[target_code]
+        with urllib.request.urlopen(item["download_url"], timeout=20) as response:
+            payload = response.read()
+        sha256 = hashlib.sha256(payload).hexdigest()
+        if item.get("sha256") and sha256 != item["sha256"]:
+            raise ValueError(f"{target_code} 题库下载完成，但哈希校验失败。")
+
+        subject = self.get_subject(target_code)
+        target_path = self._runtime_bank_file(subject)
+        target_path.write_bytes(payload)
+        self._bank_cache.pop(target_code, None)
+        return {
+            "subject_code": target_code,
+            "bank_file": subject["bank_file"],
+            "question_count": item.get("question_count", 0),
+            "sha256": sha256,
+            "source": "github",
+        }
+
+    def ensure_default_remote_bank(self) -> None:
+        subject = self.get_subject("level2_c")
+        if self._runtime_bank_file(subject).exists():
+            return
+        try:
+            self.sync_subject_bank("level2_c")
+        except Exception:
+            return
 
     def list_topics(self, subject_code: str) -> list[str]:
         bank = self.load_bank(subject_code)

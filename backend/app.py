@@ -23,6 +23,7 @@ class ApplicationContext:
         self.question_bank_service = QuestionBankService()
         self.exam_engine = ExamEngine(self.question_bank_service)
         self.ai_provider = AIProvider(lambda: self.database.get_setting("ai_settings", DEFAULT_AI_SETTINGS))
+        threading.Thread(target=self.question_bank_service.ensure_default_remote_bank, daemon=True).start()
 
     def get_settings(self) -> dict[str, Any]:
         settings = dict(DEFAULT_AI_SETTINGS)
@@ -103,6 +104,12 @@ class ApplicationContext:
             limit=limit,
             include_question=False,
         )
+
+    def get_catalog(self, force_refresh: bool = False) -> dict[str, Any]:
+        return self.question_bank_service.fetch_remote_catalog(force_refresh=force_refresh)
+
+    def sync_subject_bank(self, subject_code: str | None = None, force_refresh: bool = False) -> dict[str, Any]:
+        return self.question_bank_service.sync_subject_bank(subject_code, force_refresh=force_refresh)
 
     def generate_wrong_book_exam(self, subject_code: str, limit: int = 15) -> dict[str, Any]:
         subject = self.question_bank_service.get_subject(subject_code)
@@ -254,6 +261,11 @@ class NCRERequestHandler(SimpleHTTPRequestHandler):
             limit = int(query.get("limit", ["30"])[0])
             self._send_json(self.server.context.get_wrong_book(subject_code, limit=limit))
             return
+        if parsed.path == "/api/banks/catalog":
+            query = parse_qs(parsed.query)
+            force_refresh = query.get("force_refresh", ["false"])[0].lower() == "true"
+            self._send_json(self.server.context.get_catalog(force_refresh=force_refresh))
+            return
         if parsed.path == "/api/reports/study-plan":
             query = parse_qs(parsed.query)
             subject_code = query.get("subject_code", [None])[0]
@@ -325,6 +337,16 @@ class NCRERequestHandler(SimpleHTTPRequestHandler):
         if self.path == "/api/exams/submit":
             try:
                 result = self.server.context.submit_exam(payload)
+                self._send_json(result)
+            except Exception as exc:  # noqa: BLE001
+                self._send_json({"error": str(exc)}, status=HTTPStatus.BAD_REQUEST)
+            return
+        if self.path == "/api/banks/sync":
+            try:
+                result = self.server.context.sync_subject_bank(
+                    payload.get("subject_code"),
+                    force_refresh=bool(payload.get("force_refresh")),
+                )
                 self._send_json(result)
             except Exception as exc:  # noqa: BLE001
                 self._send_json({"error": str(exc)}, status=HTTPStatus.BAD_REQUEST)

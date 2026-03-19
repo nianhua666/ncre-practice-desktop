@@ -18,6 +18,42 @@
     "note": "用于确认不同等级与科目分类。"
   },
   {
+    "title": "一级 WPS Office 应用样题及参考答案",
+    "type": "official",
+    "url": "https://ncre.neea.edu.cn/html1/report/2501/112-1.htm",
+    "note": "用于扩展一级 WPS 相关资源。"
+  },
+  {
+    "title": "一级、二级 WPS 考试应用软件下载",
+    "type": "official",
+    "url": "https://ncre.neea.edu.cn/html1/report/1507/861-1.htm",
+    "note": "用于获取 WPS 考试环境相关软件。"
+  },
+  {
+    "title": "二级 Java 语言程序设计考试大纲（2025 年版）",
+    "type": "official",
+    "url": "https://ncre.neea.edu.cn/res/Home/2412/bcf1825f172b3b6ffc32e85dab20acb1.pdf",
+    "note": "用于扩展二级 Java 资源。"
+  },
+  {
+    "title": "二级 Access 数据库程序设计考试大纲（2025 年版）",
+    "type": "official",
+    "url": "https://ncre.neea.edu.cn/res/Home/2412/569a6d725a3b71831b2a172c2d5360a5.pdf",
+    "note": "用于扩展二级 Access 资源。"
+  },
+  {
+    "title": "二级 Web 程序设计考试大纲（2025 年版）",
+    "type": "official",
+    "url": "https://ncre.neea.edu.cn/res/Home/2412/7fba534a93fab9761d86f9847d01f04c.pdf",
+    "note": "用于扩展二级 Web 资源。"
+  },
+  {
+    "title": "二级 Web 程序设计样题及参考答案",
+    "type": "official",
+    "url": "https://ncre.neea.edu.cn/res/Home/2504/86b8f852b98dd7fbd2916a19f7dc4cc5.pdf",
+    "note": "用于理解二级 Web 题型与作答形式。"
+  },
+  {
     "title": "OpenAI API Key 管理页",
     "type": "official",
     "url": "https://platform.openai.com/settings/organization/api-keys",

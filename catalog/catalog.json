@@ -1,0 +1,56 @@
+{
+  "version": "0.4.0",
+  "default_subject_code": "level2_c",
+  "subjects": [
+    {
+      "code": "level1_office",
+      "name": "一级计算机基础及 MS Office 应用",
+      "level": "一级",
+      "question_count": 12,
+      "high_frequency_question_count": 0,
+      "bank_file": "level1_office.json",
+      "sha256": "7446af109984ebf4c1ba9be69f6e4892f2dc43dd66d02f27802a9c5ddcc81a47",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level1_office.json"
+    },
+    {
+      "code": "level2_c",
+      "name": "二级 C 语言程序设计",
+      "level": "二级",
+      "question_count": 420,
+      "high_frequency_question_count": 390,
+      "bank_file": "level2_c.json",
+      "sha256": "3889c23e52883dac50904a23a796e39bb55d63022349184b69cb8ddd441041f5",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_c.json"
+    },
+    {
+      "code": "level2_python",
+      "name": "二级 Python 语言程序设计",
+      "level": "二级",
+      "question_count": 10,
+      "high_frequency_question_count": 0,
+      "bank_file": "level2_python.json",
+      "sha256": "894a80b819ba5565d0689533b507a9ae33f48c1e0ad01536268b2b30961be1df",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_python.json"
+    },
+    {
+      "code": "level3_network",
+      "name": "三级网络技术",
+      "level": "三级",
+      "question_count": 8,
+      "high_frequency_question_count": 0,
+      "bank_file": "level3_network.json",
+      "sha256": "318de732ffb63b5c55ec755adc124bcae1c3ab757bc6c17a89111ec73638705e",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level3_network.json"
+    },
+    {
+      "code": "level4_network_engineer",
+      "name": "四级网络工程师",
+      "level": "四级",
+      "question_count": 5,
+      "high_frequency_question_count": 0,
+      "bank_file": "level4_network_engineer.json",
+      "sha256": "ccebae00cac3d0fd248aaf18da8146b0c590112d6d479ae24c481fc00abf6065",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level4_network_engineer.json"
+    }
+  ]
+}

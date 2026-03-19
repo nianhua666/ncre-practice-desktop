@@ -5,6 +5,8 @@
 ## Features
 
 - 本地固定题库、系统组卷、专题冲刺、弱项补刷、错题重练
+- GitHub 远程题库目录与程序内同步下载
+- 默认后台尝试同步二级 C 语言题库
 - AI 出题、AI 主观题讲评与批改
 - OpenAI Compatible 接入，兼容 `Responses API`、`Chat Completions` 与 `Sub2API`
 - 成绩记录、答题快照、错因分析、专题掌握度、自动复习建议
@@ -58,6 +60,13 @@ python .\scripts\analyze_question_banks.py
 
 对于 Sub2API，直接填写网关地址即可，程序会自动规范 `/v1` 路径，并在 `chat/completions` 与 `responses` 之间自动兼容回退。
 
+## Remote Bank Sync
+
+- 程序仓库包含 `catalog/catalog.json` 作为远程题库目录
+- 公开仓库发布后，程序可以通过 GitHub Raw 地址同步题库
+- 默认会在后台尝试同步 `level2_c`
+- 其他科目可在界面中手动点击“同步当前题库”
+
 ## Build EXE
 
 ```powershell
@@ -74,7 +83,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build_exe.ps1
 
 ```text
 dist\NCREPractice\NCREPractice.exe
-dist\NCREPractice-v0.3.3-win64.zip
+dist\NCREPractice-v0.4.0-win64.zip
 ```
 
 注意：

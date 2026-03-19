@@ -1,0 +1,207 @@
+{
+  "subject_code": "level3_network",
+  "subject_name": "三级网络技术",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 4
+      },
+      {
+        "type": "fill_blank",
+        "count": 1
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      },
+      {
+        "type": "bug_fix",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L3NET-001",
+      "type": "single_choice",
+      "stem": "IP 地址 192.168.1.1 属于哪一类常见网络用途？",
+      "options": [
+        "A. 公网广播",
+        "B. 私有地址",
+        "C. 组播地址",
+        "D. 环回地址"
+      ],
+      "answer": "B",
+      "analysis": "192.168.x.x 是常见私有地址段。",
+      "tags": [
+        "网络基础",
+        "IP"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L3NET-002",
+      "type": "single_choice",
+      "stem": "HTTP 默认使用的传输层协议是：",
+      "options": [
+        "A. UDP",
+        "B. ICMP",
+        "C. TCP",
+        "D. ARP"
+      ],
+      "answer": "C",
+      "analysis": "HTTP 基于 TCP。",
+      "tags": [
+        "网络协议",
+        "HTTP"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L3NET-003",
+      "type": "single_choice",
+      "stem": "交换机主要工作在 OSI 的哪一层？",
+      "options": [
+        "A. 物理层",
+        "B. 数据链路层",
+        "C. 传输层",
+        "D. 会话层"
+      ],
+      "answer": "B",
+      "analysis": "传统交换机主要工作在二层。",
+      "tags": [
+        "网络设备"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L3NET-004",
+      "type": "fill_blank",
+      "stem": "DNS 的主要作用是把域名解析为 ______。",
+      "answer": [
+        "IP地址",
+        "IP"
+      ],
+      "analysis": "DNS 负责域名与 IP 的映射。",
+      "tags": [
+        "DNS"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L3NET-005",
+      "type": "single_choice",
+      "stem": "使用 HTTPS 的主要安全收益是：",
+      "options": [
+        "A. 增大带宽",
+        "B. 加密与身份认证",
+        "C. 自动备份",
+        "D. 绕过防火墙"
+      ],
+      "answer": "B",
+      "analysis": "HTTPS 基于 TLS 提供加密和认证。",
+      "tags": [
+        "安全",
+        "HTTPS"
+      ],
+      "difficulty": "medium",
+      "score": 2
+    },
+    {
+      "id": "L3NET-006",
+      "type": "code_completion",
+      "stem": "常见局域网中用于自动分配 IP 地址的协议是 ______。",
+      "answer": [
+        "DHCP"
+      ],
+      "analysis": "DHCP 用于动态分配地址。",
+      "tags": [
+        "网络协议"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L3NET-007",
+      "type": "short_answer",
+      "stem": "说明路由器与交换机在典型企业网络中的分工差异。",
+      "analysis": "应区分二层转发与三层互联、广播域隔离、跨网段通信。",
+      "rubric": [
+        {
+          "description": "交换机负责二层转发",
+          "keywords": [
+            "二层",
+            "交换机"
+          ],
+          "points": 3
+        },
+        {
+          "description": "路由器负责三层互联",
+          "keywords": [
+            "三层",
+            "路由器",
+            "跨网段"
+          ],
+          "points": 4
+        },
+        {
+          "description": "提到广播域或隔离",
+          "keywords": [
+            "广播域",
+            "隔离"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "网络设备"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L3NET-008",
+      "type": "bug_fix",
+      "stem": "某管理员将服务器默认网关配置为错误地址，说明将导致什么现象以及如何排查。",
+      "analysis": "应说明本地通信可能正常但跨网段失败，可检查 IP、掩码、网关及路由。",
+      "rubric": [
+        {
+          "description": "跨网段访问失败",
+          "keywords": [
+            "跨网段",
+            "外网",
+            "失败"
+          ],
+          "points": 4
+        },
+        {
+          "description": "检查网关与路由",
+          "keywords": [
+            "网关",
+            "路由"
+          ],
+          "points": 4
+        },
+        {
+          "description": "检查地址与掩码",
+          "keywords": [
+            "IP",
+            "掩码"
+          ],
+          "points": 2
+        }
+      ],
+      "tags": [
+        "网络运维"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

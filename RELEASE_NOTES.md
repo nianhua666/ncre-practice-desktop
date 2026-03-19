@@ -1,5 +1,13 @@
 # Release Notes
 
+## v0.4.0
+
+- 新增 GitHub 远程题库目录 `catalog/catalog.json`
+- 程序支持通过 GitHub Raw 同步题库资源
+- 默认后台尝试同步二级 C 语言题库
+- 新增手动同步当前科目题库按钮
+- 扩展一二级官方资源入口
+
 ## v0.3.3
 
 - 新增“导出复习计划 Markdown”功能

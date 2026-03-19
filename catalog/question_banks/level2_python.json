@@ -1,0 +1,250 @@
+{
+  "subject_code": "level2_python",
+  "subject_name": "二级 Python 语言程序设计",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 4
+      },
+      {
+        "type": "fill_blank",
+        "count": 2
+      },
+      {
+        "type": "bug_fix",
+        "count": 1
+      },
+      {
+        "type": "programming",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L2PY-001",
+      "type": "single_choice",
+      "stem": "Python 中列表推导式的主要作用是：",
+      "options": [
+        "A. 定义类",
+        "B. 快速构造列表",
+        "C. 声明异常",
+        "D. 导入模块"
+      ],
+      "answer": "B",
+      "analysis": "列表推导式适合根据迭代规则快速生成列表。",
+      "tags": [
+        "Python",
+        "语法"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2PY-002",
+      "type": "single_choice",
+      "stem": "表达式 `3 // 2` 的结果是：",
+      "options": [
+        "A. 1",
+        "B. 1.5",
+        "C. 2",
+        "D. 0"
+      ],
+      "answer": "A",
+      "analysis": "`//` 表示整除。",
+      "tags": [
+        "Python",
+        "运算"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2PY-003",
+      "type": "single_choice",
+      "stem": "下列哪一个是不可变类型？",
+      "options": [
+        "A. list",
+        "B. dict",
+        "C. tuple",
+        "D. set"
+      ],
+      "answer": "C",
+      "analysis": "tuple 不可变。",
+      "tags": [
+        "Python",
+        "数据类型"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2PY-004",
+      "type": "fill_blank",
+      "stem": "用于定义函数的关键字是 ______。",
+      "answer": [
+        "def"
+      ],
+      "analysis": "`def` 用于定义函数。",
+      "tags": [
+        "Python",
+        "函数"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2PY-005",
+      "type": "code_completion",
+      "stem": "补全代码：`for i in ______(5):` 可以依次得到 0 到 4。",
+      "answer": [
+        "range"
+      ],
+      "analysis": "range(5) 生成 0 到 4。",
+      "tags": [
+        "Python",
+        "循环"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2PY-006",
+      "type": "single_choice",
+      "stem": "读取文本文件常用的模式是：",
+      "options": [
+        "A. wb",
+        "B. rb",
+        "C. r",
+        "D. ab"
+      ],
+      "answer": "C",
+      "analysis": "普通文本读取一般使用 r 模式。",
+      "tags": [
+        "Python",
+        "文件"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2PY-007",
+      "type": "single_choice",
+      "stem": "若要随机打乱列表元素顺序，应使用模块：",
+      "options": [
+        "A. math",
+        "B. random",
+        "C. csv",
+        "D. pathlib"
+      ],
+      "answer": "B",
+      "analysis": "random 模块提供 shuffle 等能力。",
+      "tags": [
+        "Python",
+        "库"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2PY-008",
+      "type": "fill_blank",
+      "stem": "异常处理语句中，用于捕获异常的关键字是 ______。",
+      "answer": [
+        "except"
+      ],
+      "analysis": "try-except 用于异常处理。",
+      "tags": [
+        "Python",
+        "异常"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2PY-009",
+      "type": "bug_fix",
+      "stem": "说明为什么在函数参数中直接写可变默认值（如 `items=[]`）通常不推荐。",
+      "analysis": "应指出默认值只创建一次，可能导致多次调用共享同一对象。",
+      "rubric": [
+        {
+          "description": "默认值只创建一次",
+          "keywords": [
+            "一次",
+            "创建"
+          ],
+          "points": 4
+        },
+        {
+          "description": "多次调用共享对象",
+          "keywords": [
+            "共享",
+            "同一对象"
+          ],
+          "points": 4
+        },
+        {
+          "description": "建议用 None 代替",
+          "keywords": [
+            "None"
+          ],
+          "points": 2
+        }
+      ],
+      "tags": [
+        "Python",
+        "函数"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L2PY-010",
+      "type": "programming",
+      "stem": "编写思路：给定一组整数，统计其中偶数个数并输出平均值。说明你的实现步骤。",
+      "analysis": "答案应包含遍历、筛选偶数、累计求和与计数、除零判断。",
+      "rubric": [
+        {
+          "description": "遍历序列",
+          "keywords": [
+            "遍历",
+            "循环"
+          ],
+          "points": 2
+        },
+        {
+          "description": "筛选偶数",
+          "keywords": [
+            "偶数",
+            "%2"
+          ],
+          "points": 3
+        },
+        {
+          "description": "累计求和与计数",
+          "keywords": [
+            "求和",
+            "计数"
+          ],
+          "points": 3
+        },
+        {
+          "description": "除零判断",
+          "keywords": [
+            "除零",
+            "没有偶数"
+          ],
+          "points": 2
+        }
+      ],
+      "tags": [
+        "Python",
+        "程序设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

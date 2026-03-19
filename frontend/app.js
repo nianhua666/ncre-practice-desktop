@@ -47,6 +47,7 @@ const dom = {
   presetOpenAIButton: document.getElementById("preset-openai-btn"),
   presetSub2APIButton: document.getElementById("preset-sub2api-btn"),
   testConnectionButton: document.getElementById("test-connection-btn"),
+  syncBankButton: document.getElementById("sync-bank-btn"),
   exportStudyPlanButton: document.getElementById("export-study-plan-btn"),
   exportWrongBookButton: document.getElementById("export-wrong-book-btn"),
 };
@@ -304,7 +305,7 @@ function renderSubjects() {
   state.subjects.forEach((subject) => {
     const fragment = template.content.cloneNode(true);
     fragment.querySelector("h4").textContent = subject.name;
-    fragment.querySelector(".muted").textContent = `${subject.level} · ${subject.completeness}`;
+    fragment.querySelector(".muted").textContent = `${subject.level} · ${subject.completeness} · ${subject.bank_source === "runtime" ? "远程缓存" : "内置题库"}`;
     fragment.querySelector(".pill").textContent = subject.completeness === "broad" ? "重点题库" : "starter bank";
     fragment.querySelector(".subject-desc").textContent = subject.description;
     fragment.querySelector(".subject-count").textContent = `${subject.question_count} 题 · 高频 ${subject.high_frequency_question_count || 0} 题`;
@@ -693,6 +694,25 @@ dom.submitExamBtn.addEventListener("click", submitExam);
 dom.historyFilter.addEventListener("change", loadHistory);
 dom.presetOpenAIButton.addEventListener("click", () => applyProviderPreset("openai"));
 dom.presetSub2APIButton.addEventListener("click", () => applyProviderPreset("sub2api"));
+dom.syncBankButton.addEventListener("click", async () => {
+  try {
+    const subjectCode = dom.subjectSelect.value;
+    if (!subjectCode) {
+      showBanner("请先选择科目。", "error");
+      return;
+    }
+    const result = await request("/api/banks/sync", {
+      method: "POST",
+      body: JSON.stringify({ subject_code: subjectCode, force_refresh: true }),
+    });
+    showBanner(`题库同步完成：${result.subject_code}，题量 ${result.question_count}`);
+    state.subjects = await request("/api/subjects");
+    renderSubjects();
+    await loadTopicsForSubject(subjectCode);
+  } catch (error) {
+    showBanner(error.message, "error");
+  }
+});
 dom.exportStudyPlanButton.addEventListener("click", async () => {
   try {
     const subjectCode = dom.subjectSelect.value;

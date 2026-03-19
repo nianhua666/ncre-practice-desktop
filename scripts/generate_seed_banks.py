@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from collections import Counter
 from pathlib import Path
 
@@ -20,6 +21,10 @@ from level2_c_structure_memory_project_pack import build_level2_c_structure_memo
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 QUESTION_BANK_DIR = DATA_DIR / "question_banks"
+CATALOG_DIR = ROOT / "catalog"
+CATALOG_BANK_DIR = CATALOG_DIR / "question_banks"
+GITHUB_OWNER = "nianhua666"
+GITHUB_REPO = "ncre-practice-desktop"
 
 
 def single_choice(question_id, stem, options, answer, analysis, tags, difficulty="medium", score=2):
@@ -118,6 +123,10 @@ def annotate_bank_questions(questions, high_frequency_ids=None):
 def write_json(path: Path, payload):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def build_level1_office_bank():
@@ -407,6 +416,7 @@ def main():
     ]
 
     subjects = []
+    catalog_subjects = []
     for bank in banks:
         bank_file = f"{bank['subject_code']}.json"
         high_frequency_count = sum(1 for question in bank["questions"] if question.get("frequency") == "high")
@@ -432,18 +442,48 @@ def main():
                 "default_blueprint": bank["default_blueprint"],
             }
         )
-        write_json(QUESTION_BANK_DIR / bank_file, bank)
+        local_bank_path = QUESTION_BANK_DIR / bank_file
+        catalog_bank_path = CATALOG_BANK_DIR / bank_file
+        write_json(local_bank_path, bank)
+        write_json(catalog_bank_path, bank)
+        digest = sha256_file(local_bank_path)
+        catalog_subjects.append(
+            {
+                "code": bank["subject_code"],
+                "name": bank["subject_name"],
+                "level": bank["subject_name"][:2],
+                "question_count": len(bank["questions"]),
+                "high_frequency_question_count": high_frequency_count,
+                "bank_file": bank_file,
+                "sha256": digest,
+                "download_url": f"https://raw.githubusercontent.com/{GITHUB_OWNER}/{GITHUB_REPO}/main/catalog/question_banks/{bank_file}",
+            }
+        )
 
     resources = [
         {"title": "二级 C 语言程序设计考试大纲（2025 年版）", "type": "official", "url": "https://ncre.neea.edu.cn/res/Home/2412/220876da81ad5d5657c599c68f81e8e9.pdf", "note": "用于核对考试范围与能力要求。"},
         {"title": "二级 C 语言程序设计样题及参考答案", "type": "official", "url": "https://ncre.neea.edu.cn/res/Home/2501/df07c4d26912fdac5b34a8496544c4ba.pdf", "note": "用于理解题型和作答形式。"},
         {"title": "全国计算机等级考试科目设置说明", "type": "official", "url": "https://ncre.neea.edu.cn/xhtml1/report/2412/138-1.htm", "note": "用于确认不同等级与科目分类。"},
+        {"title": "一级 WPS Office 应用样题及参考答案", "type": "official", "url": "https://ncre.neea.edu.cn/html1/report/2501/112-1.htm", "note": "用于扩展一级 WPS 相关资源。"},
+        {"title": "一级、二级 WPS 考试应用软件下载", "type": "official", "url": "https://ncre.neea.edu.cn/html1/report/1507/861-1.htm", "note": "用于获取 WPS 考试环境相关软件。"},
+        {"title": "二级 Java 语言程序设计考试大纲（2025 年版）", "type": "official", "url": "https://ncre.neea.edu.cn/res/Home/2412/bcf1825f172b3b6ffc32e85dab20acb1.pdf", "note": "用于扩展二级 Java 资源。"},
+        {"title": "二级 Access 数据库程序设计考试大纲（2025 年版）", "type": "official", "url": "https://ncre.neea.edu.cn/res/Home/2412/569a6d725a3b71831b2a172c2d5360a5.pdf", "note": "用于扩展二级 Access 资源。"},
+        {"title": "二级 Web 程序设计考试大纲（2025 年版）", "type": "official", "url": "https://ncre.neea.edu.cn/res/Home/2412/7fba534a93fab9761d86f9847d01f04c.pdf", "note": "用于扩展二级 Web 资源。"},
+        {"title": "二级 Web 程序设计样题及参考答案", "type": "official", "url": "https://ncre.neea.edu.cn/res/Home/2504/86b8f852b98dd7fbd2916a19f7dc4cc5.pdf", "note": "用于理解二级 Web 题型与作答形式。"},
         {"title": "OpenAI API Key 管理页", "type": "official", "url": "https://platform.openai.com/settings/organization/api-keys", "note": "用于获取或管理官方 OpenAI API Key。"},
         {"title": "OpenAI Structured Outputs 指南", "type": "official", "url": "https://platform.openai.com/docs/guides/structured-outputs", "note": "用于对接 JSON 结构化输出。"},
     ]
 
     write_json(DATA_DIR / "subjects.json", subjects)
     write_json(DATA_DIR / "resources.json", resources)
+    write_json(
+        CATALOG_DIR / "catalog.json",
+        {
+            "version": "0.4.0",
+            "default_subject_code": "level2_c",
+            "subjects": catalog_subjects,
+        },
+    )
     print(f"Generated {len(subjects)} subject manifests and question banks.")
 
 

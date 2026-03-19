@@ -1,0 +1,283 @@
+{
+  "subject_code": "level1_office",
+  "subject_name": "一级计算机基础及 MS Office 应用",
+  "default_blueprint": {
+    "duration_minutes": 30,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 5
+      },
+      {
+        "type": "fill_blank",
+        "count": 2
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L1OFF-001",
+      "type": "single_choice",
+      "stem": "在 Word 中，要快速复制格式，最适合使用的工具是：",
+      "options": [
+        "A. 页面布局",
+        "B. 格式刷",
+        "C. 拼写检查",
+        "D. 分栏"
+      ],
+      "answer": "B",
+      "analysis": "格式刷用于复制并批量应用已有格式。",
+      "tags": [
+        "Word",
+        "排版"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1OFF-002",
+      "type": "single_choice",
+      "stem": "Excel 中函数 `SUM(A1:A5)` 的作用是：",
+      "options": [
+        "A. 计算平均值",
+        "B. 统计个数",
+        "C. 求和",
+        "D. 查找最大值"
+      ],
+      "answer": "C",
+      "analysis": "SUM 用于求一组单元格的和。",
+      "tags": [
+        "Excel",
+        "函数"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1OFF-003",
+      "type": "single_choice",
+      "stem": "PowerPoint 中要让对象依次出现，应设置：",
+      "options": [
+        "A. 页面方向",
+        "B. 动画顺序",
+        "C. 页眉页脚",
+        "D. 主题字体"
+      ],
+      "answer": "B",
+      "analysis": "动画顺序控制对象在播放中的先后。",
+      "tags": [
+        "PowerPoint",
+        "动画"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1OFF-004",
+      "type": "single_choice",
+      "stem": "在 Windows 中，`Ctrl + C` 的常见功能是：",
+      "options": [
+        "A. 保存",
+        "B. 复制",
+        "C. 粘贴",
+        "D. 撤销"
+      ],
+      "answer": "B",
+      "analysis": "Ctrl + C 是复制快捷键。",
+      "tags": [
+        "Windows",
+        "基础"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1OFF-005",
+      "type": "fill_blank",
+      "stem": "Excel 中用于返回最大值的函数是 ______。",
+      "answer": [
+        "MAX"
+      ],
+      "analysis": "MAX 函数返回指定区域中的最大值。",
+      "tags": [
+        "Excel",
+        "函数"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L1OFF-006",
+      "type": "fill_blank",
+      "stem": "PowerPoint 演示文稿的默认扩展名通常为 ______。",
+      "answer": [
+        "pptx",
+        ".pptx"
+      ],
+      "analysis": "Office 新版演示文稿默认保存为 pptx。",
+      "tags": [
+        "PowerPoint",
+        "文件"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L1OFF-007",
+      "type": "single_choice",
+      "stem": "数据库中用于唯一标识记录的字段通常称为：",
+      "options": [
+        "A. 主键",
+        "B. 索引",
+        "C. 备注",
+        "D. 标题"
+      ],
+      "answer": "A",
+      "analysis": "主键用于唯一标识一条记录。",
+      "tags": [
+        "数据库",
+        "基础"
+      ],
+      "difficulty": "medium",
+      "score": 2
+    },
+    {
+      "id": "L1OFF-008",
+      "type": "single_choice",
+      "stem": "邮件中抄送的英文缩写通常是：",
+      "options": [
+        "A. FTP",
+        "B. PDF",
+        "C. CC",
+        "D. SQL"
+      ],
+      "answer": "C",
+      "analysis": "CC 表示 Carbon Copy。",
+      "tags": [
+        "网络应用",
+        "办公"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1OFF-009",
+      "type": "code_completion",
+      "stem": "在 Word 表格中，按 `Tab` 键位于最后一个单元格时会自动 ______ 新的一行。",
+      "answer": [
+        "创建",
+        "插入"
+      ],
+      "analysis": "Word 会在最后一个单元格按 Tab 时自动新增行。",
+      "tags": [
+        "Word",
+        "表格"
+      ],
+      "difficulty": "medium",
+      "score": 5
+    },
+    {
+      "id": "L1OFF-010",
+      "type": "single_choice",
+      "stem": "WPS 或 Office 文档中，保护文档常见的方式是：",
+      "options": [
+        "A. 设置密码",
+        "B. 关闭窗口",
+        "C. 更换主题",
+        "D. 调整缩放"
+      ],
+      "answer": "A",
+      "analysis": "文档保护通常通过密码或限制编辑完成。",
+      "tags": [
+        "安全",
+        "办公"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1OFF-011",
+      "type": "short_answer",
+      "stem": "简述制作一份规范汇报型 PPT 时至少应注意的三项排版原则。",
+      "analysis": "应回答出层级清晰、统一配色、字号对比、留白合理、图文平衡等原则。",
+      "rubric": [
+        {
+          "description": "层级清晰",
+          "keywords": [
+            "层级",
+            "标题",
+            "结构"
+          ],
+          "points": 3
+        },
+        {
+          "description": "视觉统一",
+          "keywords": [
+            "统一",
+            "配色",
+            "字体"
+          ],
+          "points": 3
+        },
+        {
+          "description": "留白或图文平衡",
+          "keywords": [
+            "留白",
+            "图文",
+            "对齐"
+          ],
+          "points": 4
+        }
+      ],
+      "tags": [
+        "PowerPoint",
+        "表达"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L1OFF-012",
+      "type": "short_answer",
+      "stem": "说明在 Excel 中制作成绩表时，为什么要把原始数据区与统计分析区分开。",
+      "analysis": "应说明避免覆盖原始数据、便于公式管理、方便数据透视或筛选。",
+      "rubric": [
+        {
+          "description": "避免覆盖原始数据",
+          "keywords": [
+            "覆盖",
+            "原始数据"
+          ],
+          "points": 4
+        },
+        {
+          "description": "便于公式管理",
+          "keywords": [
+            "公式",
+            "管理"
+          ],
+          "points": 3
+        },
+        {
+          "description": "便于筛选或透视",
+          "keywords": [
+            "筛选",
+            "透视",
+            "分析"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "Excel",
+        "数据分析"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

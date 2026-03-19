@@ -47,6 +47,8 @@ const dom = {
   presetOpenAIButton: document.getElementById("preset-openai-btn"),
   presetSub2APIButton: document.getElementById("preset-sub2api-btn"),
   testConnectionButton: document.getElementById("test-connection-btn"),
+  exportStudyPlanButton: document.getElementById("export-study-plan-btn"),
+  exportWrongBookButton: document.getElementById("export-wrong-book-btn"),
 };
 
 let timerHandle = null;
@@ -59,6 +61,15 @@ async function request(url, options = {}) {
   const payload = await response.json();
   if (!response.ok) {
     throw new Error(payload.error || "请求失败");
+  }
+  return payload;
+}
+
+async function requestText(url, options = {}) {
+  const response = await fetch(url, options);
+  const payload = await response.text();
+  if (!response.ok) {
+    throw new Error(payload || "请求失败");
   }
   return payload;
 }
@@ -272,6 +283,16 @@ function applyProviderPreset(preset) {
   document.getElementById("setting-temperature").value = 0.2;
   document.getElementById("setting-timeout-seconds").value = 60;
   showBanner("已恢复 OpenAI 默认预设。");
+}
+
+function downloadTextFile(filename, content) {
+  const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
 }
 
 function renderSubjects() {
@@ -672,6 +693,34 @@ dom.submitExamBtn.addEventListener("click", submitExam);
 dom.historyFilter.addEventListener("change", loadHistory);
 dom.presetOpenAIButton.addEventListener("click", () => applyProviderPreset("openai"));
 dom.presetSub2APIButton.addEventListener("click", () => applyProviderPreset("sub2api"));
+dom.exportStudyPlanButton.addEventListener("click", async () => {
+  try {
+    const subjectCode = dom.subjectSelect.value;
+    if (!subjectCode) {
+      showBanner("请先选择科目。", "error");
+      return;
+    }
+    const markdown = await requestText(`/api/reports/study-plan?subject_code=${encodeURIComponent(subjectCode)}`);
+    downloadTextFile(`${subjectCode}-study-plan.md`, markdown);
+    showBanner("复习计划已导出。");
+  } catch (error) {
+    showBanner(error.message, "error");
+  }
+});
+dom.exportWrongBookButton.addEventListener("click", async () => {
+  try {
+    const subjectCode = dom.subjectSelect.value;
+    if (!subjectCode) {
+      showBanner("请先选择科目。", "error");
+      return;
+    }
+    const markdown = await requestText(`/api/reports/wrong-book?subject_code=${encodeURIComponent(subjectCode)}`);
+    downloadTextFile(`${subjectCode}-wrong-book.md`, markdown);
+    showBanner("错题本已导出。");
+  } catch (error) {
+    showBanner(error.message, "error");
+  }
+});
 
 document.getElementById("settings-form").addEventListener("submit", async (event) => {
   event.preventDefault();

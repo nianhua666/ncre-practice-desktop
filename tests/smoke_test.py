@@ -69,6 +69,15 @@ class SmokeTest(unittest.TestCase):
         self.assertGreaterEqual(len(dashboard.get("topic_mastery", [])), 1)
         self.assertGreaterEqual(len(dashboard.get("study_recommendations", [])), 1)
 
+    def test_markdown_reports(self) -> None:
+        context = ApplicationContext()
+        exam = context.generate_system_exam("level2_c", seed=44)
+        context.submit_exam({"exam": exam, "answers": {question["id"]: "" for question in exam["questions"]}})
+        study_plan = context.export_study_plan_markdown("level2_c")
+        wrong_book = context.export_wrong_book_markdown("level2_c")
+        self.assertIn("复习计划", study_plan)
+        self.assertIn("错题本", wrong_book)
+
     def test_submit_exam_and_persist(self) -> None:
         context = ApplicationContext()
         context.save_settings(DEFAULT_AI_SETTINGS)

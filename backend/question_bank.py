@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from collections import Counter
 from copy import deepcopy
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -169,6 +170,91 @@ class QuestionBankService:
             )
         )
         return recommendations[:limit]
+
+    def build_study_plan_markdown(
+        self,
+        subject: dict[str, Any],
+        attempt_payloads: list[dict[str, Any]],
+    ) -> str:
+        weak_topics = self.analyze_weak_topics(attempt_payloads, subject_code=subject["code"])
+        topic_mastery = self.analyze_topic_mastery(attempt_payloads, subject_code=subject["code"])
+        recommendations = self.build_study_recommendations(attempt_payloads, subject_code=subject["code"])
+        wrong_book = self.build_wrong_book(attempt_payloads, subject_code=subject["code"], limit=20, include_question=False)
+
+        lines = [
+            f"# {subject['name']} 复习计划",
+            "",
+            f"- 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+            f"- 题库题量：{subject['question_count']}",
+            f"- 高频题量：{subject.get('high_frequency_question_count', 0)}",
+            f"- 题库完整度：{subject['completeness']}",
+            "",
+            "## 自动复习建议",
+        ]
+        if recommendations:
+            for item in recommendations:
+                lines.append(
+                    f"- {item['topic']}：优先级 `{item['priority']}`，加权正确率 {item['weighted_accuracy']:.0%}，建议 {item['action']}"
+                )
+        else:
+            lines.append("- 当前答题数据不足，继续刷题后再导出会更有价值。")
+
+        lines.extend(["", "## 高频弱项"])
+        if weak_topics:
+            for item in weak_topics:
+                lines.append(f"- {item['topic']}：错题权重 {item['mistake_weight']}")
+        else:
+            lines.append("- 暂无高频弱项统计。")
+
+        lines.extend(["", "## 专题掌握度"])
+        if topic_mastery:
+            for item in topic_mastery[:12]:
+                lines.append(
+                    f"- {item['topic']}：加权正确率 {item['weighted_accuracy']:.0%}，原始正确率 {item['accuracy']:.0%}，作答 {item['total_count']} 次"
+                )
+        else:
+            lines.append("- 暂无专题掌握度统计。")
+
+        lines.extend(["", "## 错题本重点"])
+        if wrong_book:
+            for item in wrong_book:
+                lines.append(
+                    f"- {item['question_id']} [{item.get('topic') or item['type']}]：错 {item['wrong_count']} 次，最近错误时间 {item['last_wrong_at']}"
+                )
+                lines.append(f"  题干：{item['stem']}")
+        else:
+            lines.append("- 当前还没有错题本记录。")
+
+        return "\n".join(lines) + "\n"
+
+    def build_wrong_book_markdown(
+        self,
+        subject: dict[str, Any],
+        attempt_payloads: list[dict[str, Any]],
+    ) -> str:
+        wrong_book = self.build_wrong_book(attempt_payloads, subject_code=subject["code"], limit=50, include_question=False)
+        lines = [
+            f"# {subject['name']} 错题本",
+            "",
+            f"- 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+            f"- 错题条目：{len(wrong_book)}",
+            "",
+        ]
+        if not wrong_book:
+            lines.append("当前还没有错题记录。")
+            return "\n".join(lines) + "\n"
+
+        for item in wrong_book:
+            lines.append(f"## {item['question_id']} · {item.get('topic') or item['type']}")
+            lines.append(f"- 错误次数：{item['wrong_count']}")
+            lines.append(f"- 高频考点：{'是' if item.get('frequency') == 'high' else '否'}")
+            lines.append(f"- 最近错误时间：{item['last_wrong_at']}")
+            lines.append(f"- 题干：{item['stem']}")
+            if item.get("analysis"):
+                lines.append(f"- 解析：{item['analysis']}")
+            lines.append("")
+
+        return "\n".join(lines)
 
     def build_wrong_book(
         self,

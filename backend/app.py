@@ -59,6 +59,16 @@ class ApplicationContext:
             item.pop("latest_user_answer", None)
         return preview
 
+    def export_study_plan_markdown(self, subject_code: str) -> str:
+        subject = self.question_bank_service.get_subject(subject_code)
+        attempts = self.database.list_attempt_payloads(subject_code=subject_code, limit=100)
+        return self.question_bank_service.build_study_plan_markdown(subject, attempts)
+
+    def export_wrong_book_markdown(self, subject_code: str) -> str:
+        subject = self.question_bank_service.get_subject(subject_code)
+        attempts = self.database.list_attempt_payloads(subject_code=subject_code, limit=100)
+        return self.question_bank_service.build_wrong_book_markdown(subject, attempts)
+
     def generate_system_exam(
         self,
         subject_code: str,
@@ -244,6 +254,28 @@ class NCRERequestHandler(SimpleHTTPRequestHandler):
             limit = int(query.get("limit", ["30"])[0])
             self._send_json(self.server.context.get_wrong_book(subject_code, limit=limit))
             return
+        if parsed.path == "/api/reports/study-plan":
+            query = parse_qs(parsed.query)
+            subject_code = query.get("subject_code", [None])[0]
+            if not subject_code:
+                self._send_json({"error": "缺少 subject_code。"}, status=HTTPStatus.BAD_REQUEST)
+                return
+            self._send_text(
+                self.server.context.export_study_plan_markdown(subject_code),
+                content_type="text/markdown; charset=utf-8",
+            )
+            return
+        if parsed.path == "/api/reports/wrong-book":
+            query = parse_qs(parsed.query)
+            subject_code = query.get("subject_code", [None])[0]
+            if not subject_code:
+                self._send_json({"error": "缺少 subject_code。"}, status=HTTPStatus.BAD_REQUEST)
+                return
+            self._send_text(
+                self.server.context.export_wrong_book_markdown(subject_code),
+                content_type="text/markdown; charset=utf-8",
+            )
+            return
         if parsed.path == "/api/history":
             query = parse_qs(parsed.query)
             subject_code = query.get("subject_code", [None])[0]
@@ -329,6 +361,14 @@ class NCRERequestHandler(SimpleHTTPRequestHandler):
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def _send_text(self, payload: str, content_type: str, status: HTTPStatus = HTTPStatus.OK) -> None:
+        body = payload.encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(body)))
         self.end_headers()
         self.wfile.write(body)

@@ -19,7 +19,7 @@ class SmokeTest(unittest.TestCase):
     def test_subjects_and_banks_exist(self) -> None:
         service = QuestionBankService()
         subjects = service.list_subjects()
-        self.assertGreaterEqual(len(subjects), 5)
+        self.assertGreaterEqual(len(subjects), 17)
         level2c = service.get_subject("level2_c")
         self.assertEqual(level2c["completeness"], "broad")
         self.assertGreaterEqual(level2c["high_frequency_question_count"], 390)
@@ -29,6 +29,8 @@ class SmokeTest(unittest.TestCase):
             sum(1 for item in bank["questions"] if item.get("frequency") == "high"),
             390,
         )
+        self.assertEqual(service.get_subject("level1_wps")["completeness"], "starter")
+        self.assertEqual(service.get_subject("level2_java")["completeness"], "starter")
 
     def test_system_exam_generation(self) -> None:
         context = ApplicationContext()

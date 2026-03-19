@@ -1,0 +1,169 @@
+{
+  "subject_code": "level1_photoshop",
+  "subject_name": "一级计算机基础及Photoshop应用",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 4
+      },
+      {
+        "type": "fill_blank",
+        "count": 2
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L1PS-001",
+      "type": "single_choice",
+      "stem": "Photoshop 中用于选取图像局部区域的基础工具是：",
+      "options": [
+        "A. 画笔",
+        "B. 选框工具",
+        "C. 吸管",
+        "D. 橡皮擦"
+      ],
+      "answer": "B",
+      "analysis": "选框工具用于建立规则选区。",
+      "tags": [
+        "Photoshop",
+        "选区"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1PS-002",
+      "type": "single_choice",
+      "stem": "图层的主要作用之一是：",
+      "options": [
+        "A. 降低分辨率",
+        "B. 分层编辑",
+        "C. 锁定系统",
+        "D. 自动存档"
+      ],
+      "answer": "B",
+      "analysis": "图层便于独立编辑不同图像元素。",
+      "tags": [
+        "Photoshop",
+        "图层"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1PS-003",
+      "type": "single_choice",
+      "stem": "若要撤销上一步操作，常用快捷键是：",
+      "options": [
+        "A. Ctrl+S",
+        "B. Ctrl+Z",
+        "C. Ctrl+P",
+        "D. Ctrl+N"
+      ],
+      "answer": "B",
+      "analysis": "Ctrl+Z 是常见撤销操作。",
+      "tags": [
+        "Photoshop",
+        "快捷键"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1PS-004",
+      "type": "single_choice",
+      "stem": "用于调整图像亮度、对比度的功能通常属于：",
+      "options": [
+        "A. 图像调整",
+        "B. 3D 设置",
+        "C. 视频时间轴",
+        "D. 字体安装"
+      ],
+      "answer": "A",
+      "analysis": "亮度、对比度属于常见图像调整。",
+      "tags": [
+        "Photoshop",
+        "调整"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1PS-005",
+      "type": "fill_blank",
+      "stem": "用于去除图像局部瑕疵的常用工具之一是 ______ 画笔。",
+      "answer": [
+        "修复",
+        "修补"
+      ],
+      "analysis": "修复类工具可处理污点和瑕疵。",
+      "tags": [
+        "Photoshop",
+        "修图"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L1PS-006",
+      "type": "fill_blank",
+      "stem": "Photoshop 源文件常见扩展名是 ______。",
+      "answer": [
+        ".psd",
+        "psd"
+      ],
+      "analysis": "PSD 是常见工程源文件格式。",
+      "tags": [
+        "Photoshop",
+        "文件"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L1PS-007",
+      "type": "short_answer",
+      "stem": "说明制作海报时为什么需要合理使用图层和文字样式。",
+      "analysis": "应说明便于分层编辑、后续修改和增强视觉层级。",
+      "rubric": [
+        {
+          "description": "分层编辑",
+          "keywords": [
+            "图层",
+            "分层"
+          ],
+          "points": 4
+        },
+        {
+          "description": "便于修改",
+          "keywords": [
+            "修改",
+            "调整"
+          ],
+          "points": 3
+        },
+        {
+          "description": "增强视觉层级",
+          "keywords": [
+            "层级",
+            "文字样式"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "Photoshop",
+        "设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

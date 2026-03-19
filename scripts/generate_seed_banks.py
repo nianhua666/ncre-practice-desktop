@@ -5,6 +5,20 @@ import hashlib
 from collections import Counter
 from pathlib import Path
 
+from ncre_level1_level2_starter_banks import (
+    build_level1_ai_foundation_bank,
+    build_level1_network_security_bank,
+    build_level1_photoshop_bank,
+    build_level1_wps_bank,
+    build_level2_access_bank,
+    build_level2_cpp_bank,
+    build_level2_java_bank,
+    build_level2_ms_office_advanced_bank,
+    build_level2_mysql_bank,
+    build_level2_opengauss_bank,
+    build_level2_web_bank,
+    build_level2_wps_advanced_bank,
+)
 from level2_c_bug_trap_pack import build_level2_c_bug_trap_pack
 from level2_c_comprehensive_programming_pack import build_level2_c_comprehensive_programming_pack
 from level2_c_file_linkedlist_pack import build_level2_c_file_linkedlist_pack
@@ -409,8 +423,20 @@ def build_level2_c_bank():
 def main():
     banks = [
         build_level1_office_bank(),
+        build_level1_wps_bank(single_choice, fill_blank, code_completion, subjective),
+        build_level1_photoshop_bank(single_choice, fill_blank, code_completion, subjective),
+        build_level1_network_security_bank(single_choice, fill_blank, code_completion, subjective),
+        build_level1_ai_foundation_bank(single_choice, fill_blank, code_completion, subjective),
         build_level2_c_bank(),
+        build_level2_java_bank(single_choice, fill_blank, code_completion, subjective),
+        build_level2_access_bank(single_choice, fill_blank, code_completion, subjective),
+        build_level2_cpp_bank(single_choice, fill_blank, code_completion, subjective),
+        build_level2_mysql_bank(single_choice, fill_blank, code_completion, subjective),
+        build_level2_web_bank(single_choice, fill_blank, code_completion, subjective),
+        build_level2_ms_office_advanced_bank(single_choice, fill_blank, code_completion, subjective),
         build_level2_python_bank(),
+        build_level2_wps_advanced_bank(single_choice, fill_blank, code_completion, subjective),
+        build_level2_opengauss_bank(single_choice, fill_blank, code_completion, subjective),
         build_level3_network_bank(),
         build_level4_network_engineer_bank(),
     ]
@@ -429,8 +455,20 @@ def main():
                 "level": bank["subject_name"][:2],
                 "description": {
                     "level1_office": "覆盖办公软件与信息技术基础的入门训练题库。",
+                    "level1_wps": "覆盖一级 WPS Office 应用的基础操作与综合应用 starter bank。",
+                    "level1_photoshop": "覆盖一级 Photoshop 图像处理基础与设计表达的 starter bank。",
+                    "level1_network_security": "覆盖一级网络安全素质教育基础知识与安全意识的 starter bank。",
+                    "level1_ai_foundation": "覆盖一级人工智能与大模型基础认知、提示词与使用规范的 starter bank。",
                     "level2_c": "内置覆盖 C 语言核心考点的重点题库，支持系统组卷与 AI 辅助讲评。",
+                    "level2_java": "覆盖二级 Java 语言程序设计基础语法、数组与方法的 starter bank。",
+                    "level2_access": "覆盖二级 Access 数据库程序设计基础表设计、查询与 SQL 的 starter bank。",
+                    "level2_cpp": "覆盖二级 C++ 语言程序设计类、引用、内存与数组的 starter bank。",
+                    "level2_mysql": "覆盖二级 MySQL 数据库程序设计基础查询、排序与建表的 starter bank。",
+                    "level2_web": "覆盖二级 Web 程序设计 HTML、CSS、JavaScript 与表单基础的 starter bank。",
+                    "level2_ms_office_advanced": "覆盖二级 MS Office 高级应用与设计综合办公场景的 starter bank。",
                     "level2_python": "覆盖 Python 基础、文件、函数与程序设计的入门到中级练习。",
+                    "level2_wps_advanced": "覆盖二级 WPS Office 高级应用与设计综合办公场景的 starter bank。",
+                    "level2_opengauss": "覆盖二级 openGauss 数据库程序设计基础建表、查询与设计的 starter bank。",
                     "level3_network": "覆盖网络基础、协议、安全与设备分工的训练题库。",
                     "level4_network_engineer": "覆盖网络工程、监控、变更与高可用场景的进阶题库。",
                 }[bank["subject_code"]],

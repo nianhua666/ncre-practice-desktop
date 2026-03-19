@@ -28,6 +28,118 @@
     }
   },
   {
+    "code": "level1_wps",
+    "name": "一级计算机基础及WPS Office应用",
+    "level": "一级",
+    "description": "覆盖一级 WPS Office 应用的基础操作与综合应用 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level1_wps.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 4
+        },
+        {
+          "type": "fill_blank",
+          "count": 2
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level1_photoshop",
+    "name": "一级计算机基础及Photoshop应用",
+    "level": "一级",
+    "description": "覆盖一级 Photoshop 图像处理基础与设计表达的 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level1_photoshop.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 4
+        },
+        {
+          "type": "fill_blank",
+          "count": 2
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level1_network_security",
+    "name": "一级网络安全素质教育",
+    "level": "一级",
+    "description": "覆盖一级网络安全素质教育基础知识与安全意识的 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level1_network_security.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 4
+        },
+        {
+          "type": "fill_blank",
+          "count": 2
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level1_ai_foundation",
+    "name": "一级人工智能与大模型基础",
+    "level": "一级",
+    "description": "覆盖一级人工智能与大模型基础认知、提示词与使用规范的 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level1_ai_foundation.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 4
+        },
+        {
+          "type": "fill_blank",
+          "count": 2
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
     "code": "level2_c",
     "name": "二级 C 语言程序设计",
     "level": "二级",
@@ -80,6 +192,198 @@
     }
   },
   {
+    "code": "level2_java",
+    "name": "二级Java语言程序设计",
+    "level": "二级",
+    "description": "覆盖二级 Java 语言程序设计基础语法、数组与方法的 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level2_java.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 3
+        },
+        {
+          "type": "fill_blank",
+          "count": 1
+        },
+        {
+          "type": "bug_fix",
+          "count": 1
+        },
+        {
+          "type": "programming",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level2_access",
+    "name": "二级Access数据库程序设计",
+    "level": "二级",
+    "description": "覆盖二级 Access 数据库程序设计基础表设计、查询与 SQL 的 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level2_access.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 3
+        },
+        {
+          "type": "fill_blank",
+          "count": 1
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        },
+        {
+          "type": "programming",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level2_cpp",
+    "name": "二级C++语言程序设计",
+    "level": "二级",
+    "description": "覆盖二级 C++ 语言程序设计类、引用、内存与数组的 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level2_cpp.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 3
+        },
+        {
+          "type": "fill_blank",
+          "count": 1
+        },
+        {
+          "type": "bug_fix",
+          "count": 1
+        },
+        {
+          "type": "programming",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level2_mysql",
+    "name": "二级MySQL数据库程序设计",
+    "level": "二级",
+    "description": "覆盖二级 MySQL 数据库程序设计基础查询、排序与建表的 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level2_mysql.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 3
+        },
+        {
+          "type": "fill_blank",
+          "count": 1
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        },
+        {
+          "type": "programming",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level2_web",
+    "name": "二级Web程序设计",
+    "level": "二级",
+    "description": "覆盖二级 Web 程序设计 HTML、CSS、JavaScript 与表单基础的 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level2_web.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 3
+        },
+        {
+          "type": "fill_blank",
+          "count": 1
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        },
+        {
+          "type": "programming",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level2_ms_office_advanced",
+    "name": "二级MS Office高级应用与设计",
+    "level": "二级",
+    "description": "覆盖二级 MS Office 高级应用与设计综合办公场景的 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level2_ms_office_advanced.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 3
+        },
+        {
+          "type": "fill_blank",
+          "count": 1
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        },
+        {
+          "type": "programming",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
     "code": "level2_python",
     "name": "二级 Python 语言程序设计",
     "level": "二级",
@@ -102,6 +406,70 @@
         },
         {
           "type": "bug_fix",
+          "count": 1
+        },
+        {
+          "type": "programming",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level2_wps_advanced",
+    "name": "二级WPS Office高级应用与设计",
+    "level": "二级",
+    "description": "覆盖二级 WPS Office 高级应用与设计综合办公场景的 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level2_wps_advanced.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 3
+        },
+        {
+          "type": "fill_blank",
+          "count": 1
+        },
+        {
+          "type": "short_answer",
+          "count": 1
+        },
+        {
+          "type": "programming",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "code": "level2_opengauss",
+    "name": "二级openGauss数据库程序设计",
+    "level": "二级",
+    "description": "覆盖二级 openGauss 数据库程序设计基础建表、查询与设计的 starter bank。",
+    "completeness": "starter",
+    "bank_file": "level2_opengauss.json",
+    "question_count": 7,
+    "high_frequency_question_count": 0,
+    "top_topics": [],
+    "default_blueprint": {
+      "duration_minutes": 45,
+      "quotas": [
+        {
+          "type": "single_choice",
+          "count": 3
+        },
+        {
+          "type": "fill_blank",
+          "count": 1
+        },
+        {
+          "type": "short_answer",
           "count": 1
         },
         {

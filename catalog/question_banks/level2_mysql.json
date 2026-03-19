@@ -1,0 +1,189 @@
+{
+  "subject_code": "level2_mysql",
+  "subject_name": "二级MySQL数据库程序设计",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 3
+      },
+      {
+        "type": "fill_blank",
+        "count": 1
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      },
+      {
+        "type": "programming",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L2MYSQL-001",
+      "type": "single_choice",
+      "stem": "用于查询数据的 SQL 关键字通常是：",
+      "options": [
+        "A. SELECT",
+        "B. DELETE",
+        "C. CREATE",
+        "D. DROP"
+      ],
+      "answer": "A",
+      "analysis": "SELECT 是基本查询语句。",
+      "tags": [
+        "MySQL",
+        "SQL"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2MYSQL-002",
+      "type": "single_choice",
+      "stem": "用于唯一标识记录的字段通常称为：",
+      "options": [
+        "A. 主键",
+        "B. 视图",
+        "C. 注释",
+        "D. 主题"
+      ],
+      "answer": "A",
+      "analysis": "主键是表中唯一标识。",
+      "tags": [
+        "MySQL",
+        "主键"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2MYSQL-003",
+      "type": "single_choice",
+      "stem": "`WHERE` 子句的主要作用是：",
+      "options": [
+        "A. 条件筛选",
+        "B. 排序",
+        "C. 分组",
+        "D. 建库"
+      ],
+      "answer": "A",
+      "analysis": "WHERE 用于条件过滤。",
+      "tags": [
+        "MySQL",
+        "查询"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2MYSQL-004",
+      "type": "fill_blank",
+      "stem": "删除表中所有记录但保留表结构，常用语句可写为 `DELETE FROM ______`。",
+      "answer": [
+        "表名"
+      ],
+      "analysis": "DELETE FROM 表名是基础删除模板。",
+      "tags": [
+        "MySQL",
+        "SQL"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2MYSQL-005",
+      "type": "code_completion",
+      "stem": "补全 SQL：`SELECT name FROM student ORDER BY score ______;`，若要求按分数降序。",
+      "answer": [
+        "DESC"
+      ],
+      "analysis": "DESC 表示降序。",
+      "tags": [
+        "MySQL",
+        "排序"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2MYSQL-006",
+      "type": "short_answer",
+      "stem": "说明为什么数据库设计中需要主键和索引。",
+      "analysis": "应涉及唯一标识、查询效率和数据一致性。",
+      "rubric": [
+        {
+          "description": "唯一标识",
+          "keywords": [
+            "唯一",
+            "主键"
+          ],
+          "points": 3
+        },
+        {
+          "description": "提高查询效率",
+          "keywords": [
+            "查询效率",
+            "索引"
+          ],
+          "points": 4
+        },
+        {
+          "description": "便于关联或一致性",
+          "keywords": [
+            "关联",
+            "一致性"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "MySQL",
+        "设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L2MYSQL-007",
+      "type": "programming",
+      "stem": "说明如何查询成绩大于 80 分的学生姓名并按成绩降序显示。",
+      "analysis": "应包含 SELECT、WHERE、ORDER BY。",
+      "rubric": [
+        {
+          "description": "SELECT 字段",
+          "keywords": [
+            "SELECT"
+          ],
+          "points": 3
+        },
+        {
+          "description": "WHERE 条件",
+          "keywords": [
+            "WHERE",
+            "80"
+          ],
+          "points": 3
+        },
+        {
+          "description": "ORDER BY DESC",
+          "keywords": [
+            "ORDER BY",
+            "DESC"
+          ],
+          "points": 4
+        }
+      ],
+      "tags": [
+        "MySQL",
+        "程序设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

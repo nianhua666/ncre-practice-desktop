@@ -1,0 +1,169 @@
+{
+  "subject_code": "level1_ai_foundation",
+  "subject_name": "一级人工智能与大模型基础",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 4
+      },
+      {
+        "type": "fill_blank",
+        "count": 2
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L1AI-001",
+      "type": "single_choice",
+      "stem": "生成式 AI 的一个常见能力是：",
+      "options": [
+        "A. 只做硬件维修",
+        "B. 根据提示生成文本或图像",
+        "C. 替代电源",
+        "D. 固定网络拓扑"
+      ],
+      "answer": "B",
+      "analysis": "生成式 AI 常根据提示生成内容。",
+      "tags": [
+        "人工智能",
+        "生成式AI"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1AI-002",
+      "type": "single_choice",
+      "stem": "提示词优化的主要目标之一是：",
+      "options": [
+        "A. 降低屏幕亮度",
+        "B. 让模型输出更符合需求",
+        "C. 删除文件系统",
+        "D. 禁用输入法"
+      ],
+      "answer": "B",
+      "analysis": "清晰提示可提升输出质量。",
+      "tags": [
+        "人工智能",
+        "提示词"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1AI-003",
+      "type": "single_choice",
+      "stem": "在使用大模型时，以下更重要的是：",
+      "options": [
+        "A. 盲目信任输出",
+        "B. 结合事实核验结果",
+        "C. 不做任何检查",
+        "D. 永远离线"
+      ],
+      "answer": "B",
+      "analysis": "模型输出可能有误，应结合核验。",
+      "tags": [
+        "人工智能",
+        "应用"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1AI-004",
+      "type": "single_choice",
+      "stem": "以下哪项更符合 AI 使用伦理？",
+      "options": [
+        "A. 伪造身份信息",
+        "B. 明确标注 AI 辅助内容",
+        "C. 批量传播谣言",
+        "D. 泄露隐私"
+      ],
+      "answer": "B",
+      "analysis": "透明标注更符合规范使用。",
+      "tags": [
+        "人工智能",
+        "伦理"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1AI-005",
+      "type": "fill_blank",
+      "stem": "大模型输出前常基于用户输入形成的文本称为 ______。",
+      "answer": [
+        "提示词",
+        "prompt"
+      ],
+      "analysis": "提示词是引导模型输出的关键输入。",
+      "tags": [
+        "人工智能",
+        "提示词"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L1AI-006",
+      "type": "fill_blank",
+      "stem": "在 AI 使用中，对输出进行事实 ______ 是重要步骤。",
+      "answer": [
+        "核验",
+        "校验"
+      ],
+      "analysis": "核验有助于降低错误传播。",
+      "tags": [
+        "人工智能",
+        "事实核验"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L1AI-007",
+      "type": "short_answer",
+      "stem": "说明在学习或办公中使用大模型时，为什么仍需要人工复核。",
+      "analysis": "应说明可能幻觉、上下文偏差和责任归属。",
+      "rubric": [
+        {
+          "description": "模型可能出错",
+          "keywords": [
+            "错误",
+            "幻觉"
+          ],
+          "points": 4
+        },
+        {
+          "description": "需要人工判断",
+          "keywords": [
+            "人工",
+            "判断"
+          ],
+          "points": 3
+        },
+        {
+          "description": "涉及责任和准确性",
+          "keywords": [
+            "责任",
+            "准确性"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "人工智能",
+        "应用"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

@@ -13,6 +13,46 @@
       "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level1_office.json"
     },
     {
+      "code": "level1_wps",
+      "name": "一级计算机基础及WPS Office应用",
+      "level": "一级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level1_wps.json",
+      "sha256": "9a6f87d17f0ca54284b7bc014b419054d591354abecaa0c00b396a9771629185",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level1_wps.json"
+    },
+    {
+      "code": "level1_photoshop",
+      "name": "一级计算机基础及Photoshop应用",
+      "level": "一级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level1_photoshop.json",
+      "sha256": "8556a7507b98e8cbc3aff47f28d471136dba7bdba8b424e5f6cce2a4ce5eef84",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level1_photoshop.json"
+    },
+    {
+      "code": "level1_network_security",
+      "name": "一级网络安全素质教育",
+      "level": "一级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level1_network_security.json",
+      "sha256": "203742f245d68a9b01a62a93edb44abc74a1831123fc6cb5dfd2187d4b7a6e55",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level1_network_security.json"
+    },
+    {
+      "code": "level1_ai_foundation",
+      "name": "一级人工智能与大模型基础",
+      "level": "一级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level1_ai_foundation.json",
+      "sha256": "3d9e553812955ba40e7a388cfa7d085864917c2ff728ae2137523df578f0eeee",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level1_ai_foundation.json"
+    },
+    {
       "code": "level2_c",
       "name": "二级 C 语言程序设计",
       "level": "二级",
@@ -23,6 +63,66 @@
       "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_c.json"
     },
     {
+      "code": "level2_java",
+      "name": "二级Java语言程序设计",
+      "level": "二级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level2_java.json",
+      "sha256": "d3cc512c5bcba5dbb5864a3e79cd8f298e86190eb68f558fd4ee4017be3cdfe9",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_java.json"
+    },
+    {
+      "code": "level2_access",
+      "name": "二级Access数据库程序设计",
+      "level": "二级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level2_access.json",
+      "sha256": "4b93032fbbcb00b377f5f5da6a199d3ffd2fb13790843805b71672e48ddfc747",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_access.json"
+    },
+    {
+      "code": "level2_cpp",
+      "name": "二级C++语言程序设计",
+      "level": "二级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level2_cpp.json",
+      "sha256": "a4b0ba6928b75ca22f000852fb21fce35d754f0aed8d701434f004d224ccf2fc",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_cpp.json"
+    },
+    {
+      "code": "level2_mysql",
+      "name": "二级MySQL数据库程序设计",
+      "level": "二级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level2_mysql.json",
+      "sha256": "384c522d8e1840d230d0e2bb2153a5e0b4d95638a6d7173cc137b6b687cda152",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_mysql.json"
+    },
+    {
+      "code": "level2_web",
+      "name": "二级Web程序设计",
+      "level": "二级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level2_web.json",
+      "sha256": "86c837198be34d09e832a2dcb4fd7481d774941308548553194cf0210e4b73df",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_web.json"
+    },
+    {
+      "code": "level2_ms_office_advanced",
+      "name": "二级MS Office高级应用与设计",
+      "level": "二级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level2_ms_office_advanced.json",
+      "sha256": "e852b6825ef5620002f3913ee87932b22f0c37d7b4869f445c62fcf8287656d2",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_ms_office_advanced.json"
+    },
+    {
       "code": "level2_python",
       "name": "二级 Python 语言程序设计",
       "level": "二级",
@@ -31,6 +131,26 @@
       "bank_file": "level2_python.json",
       "sha256": "894a80b819ba5565d0689533b507a9ae33f48c1e0ad01536268b2b30961be1df",
       "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_python.json"
+    },
+    {
+      "code": "level2_wps_advanced",
+      "name": "二级WPS Office高级应用与设计",
+      "level": "二级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level2_wps_advanced.json",
+      "sha256": "c8c0f6175e9f812e98d6383ef66999fe82da35ad1f0906ffebdddfd1a6e91137",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_wps_advanced.json"
+    },
+    {
+      "code": "level2_opengauss",
+      "name": "二级openGauss数据库程序设计",
+      "level": "二级",
+      "question_count": 7,
+      "high_frequency_question_count": 0,
+      "bank_file": "level2_opengauss.json",
+      "sha256": "60c2a80825acaa2f62b6847ebde801a45f2e973cfdf6aade2bb2deb066d44561",
+      "download_url": "https://raw.githubusercontent.com/nianhua666/ncre-practice-desktop/main/catalog/question_banks/level2_opengauss.json"
     },
     {
       "code": "level3_network",

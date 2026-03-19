@@ -1,0 +1,187 @@
+{
+  "subject_code": "level2_access",
+  "subject_name": "二级Access数据库程序设计",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 3
+      },
+      {
+        "type": "fill_blank",
+        "count": 1
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      },
+      {
+        "type": "programming",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L2ACCESS-001",
+      "type": "single_choice",
+      "stem": "Access 中用于保存数据的基础对象通常是：",
+      "options": [
+        "A. 表",
+        "B. 幻灯片",
+        "C. 页脚",
+        "D. 编译器"
+      ],
+      "answer": "A",
+      "analysis": "表是数据库记录的基础载体。",
+      "tags": [
+        "Access",
+        "数据库"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2ACCESS-002",
+      "type": "single_choice",
+      "stem": "主键的主要作用是：",
+      "options": [
+        "A. 重复标识记录",
+        "B. 唯一标识记录",
+        "C. 只用于打印",
+        "D. 只存图片"
+      ],
+      "answer": "B",
+      "analysis": "主键用于唯一标识一条记录。",
+      "tags": [
+        "Access",
+        "主键"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2ACCESS-003",
+      "type": "single_choice",
+      "stem": "查询的主要作用之一是：",
+      "options": [
+        "A. 检索满足条件的数据",
+        "B. 关闭数据库",
+        "C. 修改显示器",
+        "D. 删除系统"
+      ],
+      "answer": "A",
+      "analysis": "查询用于数据检索和筛选。",
+      "tags": [
+        "Access",
+        "查询"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2ACCESS-004",
+      "type": "fill_blank",
+      "stem": "在数据库关系设计中，描述实体联系的常见模型是 ______ 模型。",
+      "answer": [
+        "E-R",
+        "ER"
+      ],
+      "analysis": "E-R 模型用于概念设计。",
+      "tags": [
+        "Access",
+        "设计"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2ACCESS-005",
+      "type": "code_completion",
+      "stem": "补全 SQL：`SELECT * FROM Student WHERE score > ______;`，若要求查询成绩大于 60 的记录。",
+      "answer": [
+        "60"
+      ],
+      "analysis": "基础条件查询模板。",
+      "tags": [
+        "Access",
+        "SQL"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2ACCESS-006",
+      "type": "short_answer",
+      "stem": "说明为什么设计表结构时要避免同一数据在多处重复存储。",
+      "analysis": "应涉及冗余、更新异常和一致性问题。",
+      "rubric": [
+        {
+          "description": "减少冗余",
+          "keywords": [
+            "冗余"
+          ],
+          "points": 3
+        },
+        {
+          "description": "避免更新异常",
+          "keywords": [
+            "更新异常"
+          ],
+          "points": 4
+        },
+        {
+          "description": "保持一致性",
+          "keywords": [
+            "一致性"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "Access",
+        "规范化"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L2ACCESS-007",
+      "type": "programming",
+      "stem": "说明如何设计学生成绩管理数据库的基本步骤。",
+      "analysis": "应包含表设计、字段设计、主键设置、关系设计和查询。",
+      "rubric": [
+        {
+          "description": "设计表和字段",
+          "keywords": [
+            "表",
+            "字段"
+          ],
+          "points": 4
+        },
+        {
+          "description": "设置主键",
+          "keywords": [
+            "主键"
+          ],
+          "points": 2
+        },
+        {
+          "description": "设计关系或查询",
+          "keywords": [
+            "关系",
+            "查询"
+          ],
+          "points": 4
+        }
+      ],
+      "tags": [
+        "Access",
+        "程序设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "subject_code": "level2_cpp",
+  "subject_name": "二级C++语言程序设计",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 3
+      },
+      {
+        "type": "fill_blank",
+        "count": 1
+      },
+      {
+        "type": "bug_fix",
+        "count": 1
+      },
+      {
+        "type": "programming",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L2CPP-001",
+      "type": "single_choice",
+      "stem": "C++ 中用于定义类的关键字是：",
+      "options": [
+        "A. class",
+        "B. module",
+        "C. import",
+        "D. package"
+      ],
+      "answer": "A",
+      "analysis": "C++ 中类使用 class 定义。",
+      "tags": [
+        "C++",
+        "类"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2CPP-002",
+      "type": "single_choice",
+      "stem": "C++ 中引用的符号通常是：",
+      "options": [
+        "A. *",
+        "B. &",
+        "C. ->",
+        "D. %"
+      ],
+      "answer": "B",
+      "analysis": "引用声明通常使用 &。",
+      "tags": [
+        "C++",
+        "引用"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2CPP-003",
+      "type": "single_choice",
+      "stem": "构造函数的主要作用是：",
+      "options": [
+        "A. 对象初始化",
+        "B. 删除文件",
+        "C. 强制退出",
+        "D. 列表排序"
+      ],
+      "answer": "A",
+      "analysis": "构造函数常用于对象创建时初始化。",
+      "tags": [
+        "C++",
+        "构造函数"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2CPP-004",
+      "type": "fill_blank",
+      "stem": "用于输出到标准输出流的对象通常是 ______。",
+      "answer": [
+        "cout"
+      ],
+      "analysis": "cout 是常见输出流对象。",
+      "tags": [
+        "C++",
+        "输出"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2CPP-005",
+      "type": "code_completion",
+      "stem": "补全代码：`for(int i=0;i<n;i++) sum += a[____];`",
+      "answer": [
+        "i"
+      ],
+      "analysis": "数组遍历求和模板。",
+      "tags": [
+        "C++",
+        "循环"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2CPP-006",
+      "type": "bug_fix",
+      "stem": "说明为什么动态申请内存后需要及时释放。",
+      "analysis": "应指出内存泄漏和资源占用问题。",
+      "rubric": [
+        {
+          "description": "释放资源",
+          "keywords": [
+            "释放",
+            "资源"
+          ],
+          "points": 3
+        },
+        {
+          "description": "避免内存泄漏",
+          "keywords": [
+            "内存泄漏"
+          ],
+          "points": 5
+        },
+        {
+          "description": "保持程序稳定",
+          "keywords": [
+            "稳定"
+          ],
+          "points": 2
+        }
+      ],
+      "tags": [
+        "C++",
+        "内存"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L2CPP-007",
+      "type": "programming",
+      "stem": "说明如何编写 C++ 函数，找出数组中的最大值。",
+      "analysis": "应包含遍历、比较更新和返回结果。",
+      "rubric": [
+        {
+          "description": "遍历数组",
+          "keywords": [
+            "遍历"
+          ],
+          "points": 3
+        },
+        {
+          "description": "比较更新",
+          "keywords": [
+            "比较",
+            "更新"
+          ],
+          "points": 4
+        },
+        {
+          "description": "返回最大值",
+          "keywords": [
+            "返回"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "C++",
+        "程序设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

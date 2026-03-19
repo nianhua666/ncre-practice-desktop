@@ -16,6 +16,8 @@
 
 - 二级 C 语言程序设计：420 题
 - 高频题：390 题
+- 当前内置科目总数：17
+- 现已覆盖更多官方一级 / 二级科目 starter bank
 - 当前高频重点：程序设计、文件、结构体、字符串、算法与数据结构、数组、动态内存、函数
 
 ## Project Layout
@@ -66,6 +68,7 @@ python .\scripts\analyze_question_banks.py
 - 公开仓库发布后，程序可以通过 GitHub Raw 地址同步题库
 - 默认会在后台尝试同步 `level2_c`
 - 其他科目可在界面中手动点击“同步当前题库”
+- 当前已加入更多一级 / 二级科目 starter bank，支持后续按 GitHub 目录继续扩库
 
 ## Build EXE
 

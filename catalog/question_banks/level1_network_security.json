@@ -1,0 +1,166 @@
+{
+  "subject_code": "level1_network_security",
+  "subject_name": "一级网络安全素质教育",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 4
+      },
+      {
+        "type": "fill_blank",
+        "count": 2
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L1SEC-001",
+      "type": "single_choice",
+      "stem": "以下哪项更符合强密码要求？",
+      "options": [
+        "A. 123456",
+        "B. password",
+        "C. A1!m7Qz9",
+        "D. birthday"
+      ],
+      "answer": "C",
+      "analysis": "强密码通常包含多类字符且避免明显规律。",
+      "tags": [
+        "网络安全",
+        "密码"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1SEC-002",
+      "type": "single_choice",
+      "stem": "钓鱼邮件最常见的风险是：",
+      "options": [
+        "A. 自动升级内存",
+        "B. 骗取账号密码",
+        "C. 提高网速",
+        "D. 修复漏洞"
+      ],
+      "answer": "B",
+      "analysis": "钓鱼邮件常诱导泄露敏感信息。",
+      "tags": [
+        "网络安全",
+        "邮件"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1SEC-003",
+      "type": "single_choice",
+      "stem": "双重认证的主要价值是：",
+      "options": [
+        "A. 减少分辨率",
+        "B. 增加额外身份校验",
+        "C. 关闭防火墙",
+        "D. 取消密码"
+      ],
+      "answer": "B",
+      "analysis": "双重认证能提高账户安全性。",
+      "tags": [
+        "网络安全",
+        "认证"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1SEC-004",
+      "type": "single_choice",
+      "stem": "公共 Wi-Fi 下更需要注意的是：",
+      "options": [
+        "A. 随意输入支付信息",
+        "B. 核对网络并避免敏感操作",
+        "C. 关闭系统更新",
+        "D. 只看视频"
+      ],
+      "answer": "B",
+      "analysis": "公共网络中应提高风险意识。",
+      "tags": [
+        "网络安全",
+        "公共网络"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1SEC-005",
+      "type": "fill_blank",
+      "stem": "防火墙的主要作用之一是对网络 ______ 进行控制。",
+      "answer": [
+        "访问",
+        "流量"
+      ],
+      "analysis": "防火墙用于访问和流量控制。",
+      "tags": [
+        "网络安全",
+        "防火墙"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L1SEC-006",
+      "type": "fill_blank",
+      "stem": "软件及时安装安全 ______ 可以降低漏洞风险。",
+      "answer": [
+        "补丁"
+      ],
+      "analysis": "补丁管理是基础安全措施。",
+      "tags": [
+        "网络安全",
+        "补丁"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L1SEC-007",
+      "type": "short_answer",
+      "stem": "说明为什么企业或个人应定期备份重要数据。",
+      "analysis": "应说明防止误删、勒索、设备损坏和便于恢复。",
+      "rubric": [
+        {
+          "description": "防止误删损失",
+          "keywords": [
+            "误删"
+          ],
+          "points": 3
+        },
+        {
+          "description": "应对勒索或损坏",
+          "keywords": [
+            "勒索",
+            "损坏"
+          ],
+          "points": 4
+        },
+        {
+          "description": "便于恢复",
+          "keywords": [
+            "恢复"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "网络安全",
+        "备份"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

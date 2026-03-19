@@ -1,0 +1,186 @@
+{
+  "subject_code": "level2_wps_advanced",
+  "subject_name": "二级WPS Office高级应用与设计",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 3
+      },
+      {
+        "type": "fill_blank",
+        "count": 1
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      },
+      {
+        "type": "programming",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L2WPSA-001",
+      "type": "single_choice",
+      "stem": "二级 WPS 高级应用强调的能力之一是：",
+      "options": [
+        "A. 综合文档处理",
+        "B. 只会打字",
+        "C. 固定一个模板",
+        "D. 不用表格"
+      ],
+      "answer": "A",
+      "analysis": "该科目强调办公综合应用与设计。",
+      "tags": [
+        "WPS高级应用",
+        "综合应用"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2WPSA-002",
+      "type": "single_choice",
+      "stem": "在 WPS 表格中，筛选和排序主要用于：",
+      "options": [
+        "A. 数据整理分析",
+        "B. 删除电源",
+        "C. 安装驱动",
+        "D. 控制风扇"
+      ],
+      "answer": "A",
+      "analysis": "筛选排序是数据整理的基础。",
+      "tags": [
+        "WPS高级应用",
+        "表格"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2WPSA-003",
+      "type": "single_choice",
+      "stem": "在 WPS 演示中版式统一的关键之一是：",
+      "options": [
+        "A. 母版",
+        "B. 回收站",
+        "C. 任务管理器",
+        "D. 防火墙"
+      ],
+      "answer": "A",
+      "analysis": "母版有助于统一演示风格。",
+      "tags": [
+        "WPS高级应用",
+        "演示"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2WPSA-004",
+      "type": "fill_blank",
+      "stem": "在 WPS 文字中自动生成目录通常依赖预先设置好的 ______。",
+      "answer": [
+        "样式"
+      ],
+      "analysis": "样式是目录和结构化排版基础。",
+      "tags": [
+        "WPS高级应用",
+        "文字"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2WPSA-005",
+      "type": "code_completion",
+      "stem": "补全函数：`=SUMIF(B2:B20, \">=60\", ______)`，若要求统计 C 列对应分数。",
+      "answer": [
+        "C2:C20"
+      ],
+      "analysis": "SUMIF 常用于条件求和。",
+      "tags": [
+        "WPS高级应用",
+        "表格"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2WPSA-006",
+      "type": "short_answer",
+      "stem": "说明在 WPS 综合办公任务中，为什么模板与样式能显著提高效率。",
+      "analysis": "应涉及统一格式、减少重复劳动和便于维护。",
+      "rubric": [
+        {
+          "description": "统一格式",
+          "keywords": [
+            "统一",
+            "格式"
+          ],
+          "points": 4
+        },
+        {
+          "description": "减少重复劳动",
+          "keywords": [
+            "重复",
+            "效率"
+          ],
+          "points": 3
+        },
+        {
+          "description": "便于维护",
+          "keywords": [
+            "维护"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "WPS高级应用",
+        "综合应用"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L2WPSA-007",
+      "type": "programming",
+      "stem": "说明如何规划一份包含文字、表格和演示稿的 WPS 综合任务。",
+      "analysis": "应涉及文字撰写、数据表整理和演示汇报。",
+      "rubric": [
+        {
+          "description": "文字文档",
+          "keywords": [
+            "文字"
+          ],
+          "points": 3
+        },
+        {
+          "description": "表格数据",
+          "keywords": [
+            "表格"
+          ],
+          "points": 3
+        },
+        {
+          "description": "演示汇报",
+          "keywords": [
+            "演示"
+          ],
+          "points": 4
+        }
+      ],
+      "tags": [
+        "WPS高级应用",
+        "程序设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

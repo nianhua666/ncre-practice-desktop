@@ -1,0 +1,187 @@
+{
+  "subject_code": "level2_web",
+  "subject_name": "二级Web程序设计",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 3
+      },
+      {
+        "type": "fill_blank",
+        "count": 1
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      },
+      {
+        "type": "programming",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L2WEB-001",
+      "type": "single_choice",
+      "stem": "HTML 中用于创建超链接的标签通常是：",
+      "options": [
+        "A. <img>",
+        "B. <a>",
+        "C. <div>",
+        "D. <table>"
+      ],
+      "answer": "B",
+      "analysis": "<a> 标签用于超链接。",
+      "tags": [
+        "Web",
+        "HTML"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2WEB-002",
+      "type": "single_choice",
+      "stem": "CSS 的主要作用通常是：",
+      "options": [
+        "A. 控制页面样式",
+        "B. 连接数据库",
+        "C. 编译 Java",
+        "D. 删除脚本"
+      ],
+      "answer": "A",
+      "analysis": "CSS 用于页面表现层样式。",
+      "tags": [
+        "Web",
+        "CSS"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2WEB-003",
+      "type": "single_choice",
+      "stem": "JavaScript 更常用于：",
+      "options": [
+        "A. 客户端交互逻辑",
+        "B. 图像压缩",
+        "C. BIOS 设置",
+        "D. 电源管理"
+      ],
+      "answer": "A",
+      "analysis": "JavaScript 常用于 Web 交互。",
+      "tags": [
+        "Web",
+        "JavaScript"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2WEB-004",
+      "type": "fill_blank",
+      "stem": "HTTP 请求中常见的提交表单方法包括 GET 和 ______。",
+      "answer": [
+        "POST"
+      ],
+      "analysis": "GET/POST 是基础请求方式。",
+      "tags": [
+        "Web",
+        "HTTP"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2WEB-005",
+      "type": "code_completion",
+      "stem": "补全代码：`<input type=\"______\">`，若要求密码输入框。",
+      "answer": [
+        "password"
+      ],
+      "analysis": "password 类型用于密码输入。",
+      "tags": [
+        "Web",
+        "表单"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2WEB-006",
+      "type": "short_answer",
+      "stem": "说明为什么前端页面需要进行基本的表单校验。",
+      "analysis": "应涉及减少错误输入、改善体验和减轻后端压力。",
+      "rubric": [
+        {
+          "description": "减少错误输入",
+          "keywords": [
+            "错误输入"
+          ],
+          "points": 3
+        },
+        {
+          "description": "改善用户体验",
+          "keywords": [
+            "体验"
+          ],
+          "points": 3
+        },
+        {
+          "description": "减轻后端压力",
+          "keywords": [
+            "后端",
+            "压力"
+          ],
+          "points": 4
+        }
+      ],
+      "tags": [
+        "Web",
+        "表单"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L2WEB-007",
+      "type": "programming",
+      "stem": "说明一个基础登录页通常需要包含哪些核心元素。",
+      "analysis": "应包含输入框、提交按钮、校验与反馈信息。",
+      "rubric": [
+        {
+          "description": "用户名和密码输入框",
+          "keywords": [
+            "用户名",
+            "密码"
+          ],
+          "points": 4
+        },
+        {
+          "description": "提交按钮",
+          "keywords": [
+            "按钮"
+          ],
+          "points": 2
+        },
+        {
+          "description": "校验或反馈",
+          "keywords": [
+            "校验",
+            "反馈"
+          ],
+          "points": 4
+        }
+      ],
+      "tags": [
+        "Web",
+        "程序设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

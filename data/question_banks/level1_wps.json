@@ -1,0 +1,169 @@
+{
+  "subject_code": "level1_wps",
+  "subject_name": "一级计算机基础及WPS Office应用",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 4
+      },
+      {
+        "type": "fill_blank",
+        "count": 2
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L1WPS-001",
+      "type": "single_choice",
+      "stem": "在 WPS 文字中快速复制格式，常用工具是：",
+      "options": [
+        "A. 格式刷",
+        "B. 邮件合并",
+        "C. 分栏",
+        "D. 批注"
+      ],
+      "answer": "A",
+      "analysis": "格式刷用于复制并应用已有格式。",
+      "tags": [
+        "WPS",
+        "文字"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1WPS-002",
+      "type": "single_choice",
+      "stem": "WPS 表格中用于求和的函数通常是：",
+      "options": [
+        "A. MAX",
+        "B. SUM",
+        "C. IF",
+        "D. LEN"
+      ],
+      "answer": "B",
+      "analysis": "SUM 是基础求和函数。",
+      "tags": [
+        "WPS",
+        "表格"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1WPS-003",
+      "type": "single_choice",
+      "stem": "WPS 演示中让对象逐个出现，主要设置：",
+      "options": [
+        "A. 动画",
+        "B. 打印",
+        "C. 页脚",
+        "D. 拼写"
+      ],
+      "answer": "A",
+      "analysis": "演示对象出现顺序通过动画设置控制。",
+      "tags": [
+        "WPS",
+        "演示"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1WPS-004",
+      "type": "single_choice",
+      "stem": "WPS 云文档的主要价值之一是：",
+      "options": [
+        "A. 自动关机",
+        "B. 多端同步",
+        "C. 只读模式",
+        "D. 固定字体"
+      ],
+      "answer": "B",
+      "analysis": "云文档可支持多端查看和同步。",
+      "tags": [
+        "WPS",
+        "云文档"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L1WPS-005",
+      "type": "fill_blank",
+      "stem": "WPS 表格中用于返回平均值的函数是 ______。",
+      "answer": [
+        "AVERAGE"
+      ],
+      "analysis": "AVERAGE 用于平均值统计。",
+      "tags": [
+        "WPS",
+        "函数"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L1WPS-006",
+      "type": "fill_blank",
+      "stem": "WPS 文字默认文档扩展名通常是 ______。",
+      "answer": [
+        ".wps",
+        "wps"
+      ],
+      "analysis": "WPS 文字传统格式扩展名为 wps。",
+      "tags": [
+        "WPS",
+        "文件"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L1WPS-007",
+      "type": "short_answer",
+      "stem": "说明制作一份规范的 WPS 演示文稿时至少应注意的三项原则。",
+      "analysis": "应包含层级清晰、视觉统一、留白合理等。",
+      "rubric": [
+        {
+          "description": "层级清晰",
+          "keywords": [
+            "层级",
+            "标题"
+          ],
+          "points": 3
+        },
+        {
+          "description": "视觉统一",
+          "keywords": [
+            "统一",
+            "配色",
+            "字体"
+          ],
+          "points": 3
+        },
+        {
+          "description": "留白或对齐",
+          "keywords": [
+            "留白",
+            "对齐"
+          ],
+          "points": 4
+        }
+      ],
+      "tags": [
+        "WPS",
+        "演示"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "subject_code": "level2_java",
+  "subject_name": "二级Java语言程序设计",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 3
+      },
+      {
+        "type": "fill_blank",
+        "count": 1
+      },
+      {
+        "type": "bug_fix",
+        "count": 1
+      },
+      {
+        "type": "programming",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L2JAVA-001",
+      "type": "single_choice",
+      "stem": "Java 中定义类的关键字是：",
+      "options": [
+        "A. class",
+        "B. struct",
+        "C. func",
+        "D. typedef"
+      ],
+      "answer": "A",
+      "analysis": "Java 用 class 定义类。",
+      "tags": [
+        "Java",
+        "基础"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2JAVA-002",
+      "type": "single_choice",
+      "stem": "Java 程序入口方法通常是：",
+      "options": [
+        "A. init",
+        "B. main",
+        "C. runApp",
+        "D. execute"
+      ],
+      "answer": "B",
+      "analysis": "main 是常见入口方法。",
+      "tags": [
+        "Java",
+        "基础"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2JAVA-003",
+      "type": "single_choice",
+      "stem": "以下更符合面向对象特征的是：",
+      "options": [
+        "A. 封装",
+        "B. 线性表",
+        "C. 端口映射",
+        "D. 进制转换"
+      ],
+      "answer": "A",
+      "analysis": "面向对象通常强调封装、继承、多态。",
+      "tags": [
+        "Java",
+        "面向对象"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2JAVA-004",
+      "type": "fill_blank",
+      "stem": "用于输出一行文本的常见语句是 `System.out.______`。",
+      "answer": [
+        "println"
+      ],
+      "analysis": "println 常用于输出并换行。",
+      "tags": [
+        "Java",
+        "输出"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2JAVA-005",
+      "type": "code_completion",
+      "stem": "补全代码：`for(int i=0; i<10; i++){ sum += ______; }`，若要求把 i 累加到 sum。",
+      "answer": [
+        "i"
+      ],
+      "analysis": "基础循环累加模板。",
+      "tags": [
+        "Java",
+        "循环"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2JAVA-006",
+      "type": "bug_fix",
+      "stem": "说明为什么在 Java 中访问数组元素时需要注意下标边界。",
+      "analysis": "应指出越界会触发运行时异常。",
+      "rubric": [
+        {
+          "description": "下标范围有限",
+          "keywords": [
+            "下标",
+            "范围"
+          ],
+          "points": 3
+        },
+        {
+          "description": "越界会异常",
+          "keywords": [
+            "越界",
+            "异常"
+          ],
+          "points": 5
+        },
+        {
+          "description": "应先判断长度",
+          "keywords": [
+            "长度",
+            "判断"
+          ],
+          "points": 2
+        }
+      ],
+      "tags": [
+        "Java",
+        "数组"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L2JAVA-007",
+      "type": "programming",
+      "stem": "说明如何编写 Java 方法，统计数组中偶数个数。",
+      "analysis": "应包含遍历数组、判断偶数、计数累加和返回值。",
+      "rubric": [
+        {
+          "description": "遍历数组",
+          "keywords": [
+            "遍历"
+          ],
+          "points": 2
+        },
+        {
+          "description": "判断偶数",
+          "keywords": [
+            "偶数",
+            "%2"
+          ],
+          "points": 3
+        },
+        {
+          "description": "计数累加",
+          "keywords": [
+            "计数"
+          ],
+          "points": 3
+        },
+        {
+          "description": "返回结果",
+          "keywords": [
+            "返回"
+          ],
+          "points": 2
+        }
+      ],
+      "tags": [
+        "Java",
+        "程序设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

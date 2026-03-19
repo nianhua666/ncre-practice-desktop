@@ -1,0 +1,188 @@
+{
+  "subject_code": "level2_opengauss",
+  "subject_name": "二级openGauss数据库程序设计",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 3
+      },
+      {
+        "type": "fill_blank",
+        "count": 1
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      },
+      {
+        "type": "programming",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L2OG-001",
+      "type": "single_choice",
+      "stem": "openGauss 属于哪类软件平台？",
+      "options": [
+        "A. 数据库管理系统",
+        "B. 图片编辑器",
+        "C. 浏览器",
+        "D. 文本输入法"
+      ],
+      "answer": "A",
+      "analysis": "openGauss 是数据库管理系统。",
+      "tags": [
+        "openGauss",
+        "基础"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2OG-002",
+      "type": "single_choice",
+      "stem": "使用 SQL 创建表的关键字通常是：",
+      "options": [
+        "A. CREATE TABLE",
+        "B. DROP VIEW",
+        "C. SELECT INTO",
+        "D. OPEN FILE"
+      ],
+      "answer": "A",
+      "analysis": "CREATE TABLE 用于建表。",
+      "tags": [
+        "openGauss",
+        "SQL"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2OG-003",
+      "type": "single_choice",
+      "stem": "数据库中用于检索记录的语句通常是：",
+      "options": [
+        "A. SELECT",
+        "B. UPDATE",
+        "C. DELETE",
+        "D. ALTER"
+      ],
+      "answer": "A",
+      "analysis": "SELECT 是基础查询语句。",
+      "tags": [
+        "openGauss",
+        "SQL"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2OG-004",
+      "type": "fill_blank",
+      "stem": "若要修改表结构，常用 SQL 关键字是 ______。",
+      "answer": [
+        "ALTER"
+      ],
+      "analysis": "ALTER 常用于修改表结构。",
+      "tags": [
+        "openGauss",
+        "SQL"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2OG-005",
+      "type": "code_completion",
+      "stem": "补全 SQL：`SELECT * FROM student WHERE score >= ______;`，若要求查询 60 分及以上记录。",
+      "answer": [
+        "60"
+      ],
+      "analysis": "基础条件查询模板。",
+      "tags": [
+        "openGauss",
+        "查询"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2OG-006",
+      "type": "short_answer",
+      "stem": "说明数据库表设计中为什么要考虑主键和数据类型。",
+      "analysis": "应涉及唯一标识、约束和数据一致性。",
+      "rubric": [
+        {
+          "description": "唯一标识",
+          "keywords": [
+            "唯一",
+            "主键"
+          ],
+          "points": 3
+        },
+        {
+          "description": "数据类型合理",
+          "keywords": [
+            "数据类型"
+          ],
+          "points": 3
+        },
+        {
+          "description": "约束和一致性",
+          "keywords": [
+            "约束",
+            "一致性"
+          ],
+          "points": 4
+        }
+      ],
+      "tags": [
+        "openGauss",
+        "设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L2OG-007",
+      "type": "programming",
+      "stem": "说明如何设计一个学生信息表并查询成绩前十名。",
+      "analysis": "应涉及字段设计、建表和排序查询。",
+      "rubric": [
+        {
+          "description": "设计字段",
+          "keywords": [
+            "字段",
+            "建表"
+          ],
+          "points": 4
+        },
+        {
+          "description": "排序查询",
+          "keywords": [
+            "排序",
+            "前十"
+          ],
+          "points": 3
+        },
+        {
+          "description": "使用 SELECT 语句",
+          "keywords": [
+            "SELECT"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "openGauss",
+        "程序设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "subject_code": "level2_ms_office_advanced",
+  "subject_name": "二级MS Office高级应用与设计",
+  "default_blueprint": {
+    "duration_minutes": 45,
+    "quotas": [
+      {
+        "type": "single_choice",
+        "count": 3
+      },
+      {
+        "type": "fill_blank",
+        "count": 1
+      },
+      {
+        "type": "short_answer",
+        "count": 1
+      },
+      {
+        "type": "programming",
+        "count": 1
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "L2MSA-001",
+      "type": "single_choice",
+      "stem": "二级 MS Office 高级应用常强调的能力之一是：",
+      "options": [
+        "A. 单纯记忆菜单位置",
+        "B. 综合办公场景处理",
+        "C. 只会开关机",
+        "D. 只看网页"
+      ],
+      "answer": "B",
+      "analysis": "该科目更强调综合应用能力。",
+      "tags": [
+        "MS Office高级应用",
+        "综合应用"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2MSA-002",
+      "type": "single_choice",
+      "stem": "在 Word 长文档处理中，样式的主要价值之一是：",
+      "options": [
+        "A. 增强结构化排版",
+        "B. 删除图片",
+        "C. 禁用打印",
+        "D. 关闭页面"
+      ],
+      "answer": "A",
+      "analysis": "样式有助于统一标题和目录结构。",
+      "tags": [
+        "MS Office高级应用",
+        "Word"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2MSA-003",
+      "type": "single_choice",
+      "stem": "在 Excel 中进行数据分析时，数据透视表常用于：",
+      "options": [
+        "A. 汇总分析",
+        "B. 画简单直线",
+        "C. 改显示器",
+        "D. 删除系统"
+      ],
+      "answer": "A",
+      "analysis": "数据透视表用于汇总分析数据。",
+      "tags": [
+        "MS Office高级应用",
+        "Excel"
+      ],
+      "difficulty": "easy",
+      "score": 2
+    },
+    {
+      "id": "L2MSA-004",
+      "type": "fill_blank",
+      "stem": "PowerPoint 中用于控制对象出现次序的常见功能是 ______。",
+      "answer": [
+        "动画"
+      ],
+      "analysis": "动画顺序控制播放过程中的先后。",
+      "tags": [
+        "MS Office高级应用",
+        "PowerPoint"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2MSA-005",
+      "type": "code_completion",
+      "stem": "补全函数：`=VLOOKUP(A2, $E$2:$G$20, 2, ______)`，若要求精确匹配。",
+      "answer": [
+        "FALSE",
+        "0"
+      ],
+      "analysis": "精确匹配常写 FALSE 或 0。",
+      "tags": [
+        "MS Office高级应用",
+        "Excel"
+      ],
+      "difficulty": "easy",
+      "score": 5
+    },
+    {
+      "id": "L2MSA-006",
+      "type": "short_answer",
+      "stem": "说明为什么办公自动化场景下需要兼顾文档规范、数据准确和展示效果。",
+      "analysis": "应涉及沟通效率、分析可靠性和表达质量。",
+      "rubric": [
+        {
+          "description": "规范有助于沟通",
+          "keywords": [
+            "规范",
+            "沟通"
+          ],
+          "points": 3
+        },
+        {
+          "description": "数据准确很重要",
+          "keywords": [
+            "准确"
+          ],
+          "points": 4
+        },
+        {
+          "description": "展示效果影响表达",
+          "keywords": [
+            "展示",
+            "表达"
+          ],
+          "points": 3
+        }
+      ],
+      "tags": [
+        "MS Office高级应用",
+        "综合应用"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    },
+    {
+      "id": "L2MSA-007",
+      "type": "programming",
+      "stem": "说明完成一份办公综合任务通常会跨哪些 Office 组件协同。",
+      "analysis": "应涉及 Word、Excel、PowerPoint 等协作。",
+      "rubric": [
+        {
+          "description": "Word 文档",
+          "keywords": [
+            "Word"
+          ],
+          "points": 3
+        },
+        {
+          "description": "Excel 数据",
+          "keywords": [
+            "Excel"
+          ],
+          "points": 3
+        },
+        {
+          "description": "PowerPoint 展示",
+          "keywords": [
+            "PowerPoint"
+          ],
+          "points": 4
+        }
+      ],
+      "tags": [
+        "MS Office高级应用",
+        "程序设计"
+      ],
+      "difficulty": "medium",
+      "score": 10
+    }
+  ]
+}

@@ -10,6 +10,7 @@ $version = @'
 from backend.config import APP_VERSION
 print(APP_VERSION)
 '@ | python -
+$version = $version.Trim()
 
 python -m PyInstaller `
   --noconfirm `
@@ -26,5 +27,9 @@ if (Test-Path $zipPath) {
   Remove-Item $zipPath -Force
 }
 Compress-Archive -Path .\dist\NCREPractice\* -DestinationPath $zipPath
+
+if (Test-Path .\build) {
+  Remove-Item .\build -Recurse -Force
+}
 
 Write-Host "Build finished. EXE output: dist\\NCREPractice\\NCREPractice.exe"

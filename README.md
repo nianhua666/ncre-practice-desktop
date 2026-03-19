@@ -74,8 +74,14 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build_exe.ps1
 
 ```text
 dist\NCREPractice\NCREPractice.exe
-dist\NCREPractice-v0.3.1-win64.zip
+dist\NCREPractice-v0.3.2-win64.zip
 ```
+
+注意：
+
+- 不要运行 `build\NCREPractice\NCREPractice.exe`
+- `build\` 目录是 PyInstaller 中间构建目录，不是最终发布产物
+- 正式可运行版本始终使用 `dist\NCREPractice\NCREPractice.exe`
 
 ## License
 

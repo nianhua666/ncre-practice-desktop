@@ -1,5 +1,11 @@
 # Release Notes
 
+## v0.3.2
+
+- 修复打包流程，清理 `build/` 中间目录，避免误点不可运行的中间 EXE
+- 明确区分正式可运行产物 `dist\NCREPractice\NCREPractice.exe`
+- 完成打包版 EXE 再验证，确认正式产物可启动、可访问接口
+
 ## v0.3.1
 
 - 打磨前端概览页，强化专题掌握度和复习建议展示

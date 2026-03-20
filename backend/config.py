@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 APP_NAME = "NCRE C语言计算机等级考试模拟系统"
-APP_VERSION = "0.4.0"
+APP_VERSION = "0.4.1"
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 GITHUB_OWNER = "nianhua666"
 GITHUB_REPO = "ncre-practice-desktop"

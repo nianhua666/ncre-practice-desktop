@@ -3,6 +3,8 @@ $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
 
+Get-Process NCREPractice -ErrorAction SilentlyContinue | Stop-Process -Force
+
 python .\scripts\generate_seed_banks.py
 python -m pip install -r .\requirements.txt
 

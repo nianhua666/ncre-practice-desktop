@@ -86,7 +86,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build_exe.ps1
 
 ```text
 dist\NCREPractice\NCREPractice.exe
-dist\NCREPractice-v0.4.0-win64.zip
+dist\NCREPractice-v0.4.1-win64.zip
 ```
 
 注意：
